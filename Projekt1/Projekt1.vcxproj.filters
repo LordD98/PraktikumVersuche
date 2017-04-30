@@ -15,16 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Downloads\Vorlagen-PI1-2017\versuch00\Testprogramm_Eclipse_Doxygen\Complex.cpp">
+    <ClCompile Include="..\..\..\..\..\Downloads\Vorlagen-PI1-2017\Versuch01Teil1\Variablen.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\Downloads\Vorlagen-PI1-2017\versuch00\Testprogramm_Eclipse_Doxygen\main.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Downloads\Vorlagen-PI1-2017\versuch00\Testprogramm_Eclipse_Doxygen\Complex.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
