@@ -1,0 +1,18 @@
+//////////////////////////////////////////////////////////////////////////////
+// Praktikum Informatik 1 MMXVII
+// Versuch 04: Einführung Klasse
+//
+// Datei:  main.cpp
+// Inhalt: Hauptprogramm
+//////////////////////////////////////////////////////////////////////////////
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+#include "Vektor.h"
+
+int main()
+{ 
+   return 0;
+
+}
