@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Versuch1", "Versuch1\Versuch1.vcxproj", "{16CB30A4-648E-4EF7-94AA-4578F3A8475E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Versuch0", "Versuch0\Versuch0.vcxproj", "{43FEDA34-5A1B-49A6-A332-F43D6D2ED487}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fibonacci", "Fibonacci\Fibonacci.vcxproj", "{E5CAABEB-9E9D-4444-9D5B-965D952E03BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{43FEDA34-5A1B-49A6-A332-F43D6D2ED487}.Release|x64.Build.0 = Release|x64
 		{43FEDA34-5A1B-49A6-A332-F43D6D2ED487}.Release|x86.ActiveCfg = Release|Win32
 		{43FEDA34-5A1B-49A6-A332-F43D6D2ED487}.Release|x86.Build.0 = Release|Win32
+		{E5CAABEB-9E9D-4444-9D5B-965D952E03BF}.Debug|x64.ActiveCfg = Debug|x64
+		{E5CAABEB-9E9D-4444-9D5B-965D952E03BF}.Debug|x64.Build.0 = Debug|x64
+		{E5CAABEB-9E9D-4444-9D5B-965D952E03BF}.Debug|x86.ActiveCfg = Debug|Win32
+		{E5CAABEB-9E9D-4444-9D5B-965D952E03BF}.Debug|x86.Build.0 = Debug|Win32
+		{E5CAABEB-9E9D-4444-9D5B-965D952E03BF}.Release|x64.ActiveCfg = Release|x64
+		{E5CAABEB-9E9D-4444-9D5B-965D952E03BF}.Release|x64.Build.0 = Release|x64
+		{E5CAABEB-9E9D-4444-9D5B-965D952E03BF}.Release|x86.ActiveCfg = Release|Win32
+		{E5CAABEB-9E9D-4444-9D5B-965D952E03BF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
