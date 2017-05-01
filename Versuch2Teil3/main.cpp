@@ -37,17 +37,17 @@ int main()
 	char buf[80];
 	string input, encodedInput, decodedInput, output;
 
-	//cout << "Geben Sie ein Wort aus 5 Grossbuchstaben ein:" << endl;						//Encode
-	//cin.getline(buf, 80);
-	//input = string(buf, buf + NUM_OF_CHARS);
-	//encodedInput = encode(input);
-	//cout << input << endl << encodedInput << endl;
+	cout << "Geben Sie ein Wort aus 5 Grossbuchstaben ein:" << endl;						//Encode
+	cin.getline(buf, 80);
+	input = string(buf, buf + NUM_OF_CHARS);
+	encodedInput = encode(input);
+	cout << input << endl << encodedInput << endl;
 
-	//cout << "Geben Sie ein verschluesseltes Wort aus 5 Grossbuchstaben ein:" << endl;		//Decode
-	//cin.getline(buf, 80);
-	//input = string(buf, buf + NUM_OF_CHARS);
-	//decodedInput = decode(input);
-	//cout << decodedInput << endl;
+	cout << "Geben Sie ein verschluesseltes Wort aus 5 Grossbuchstaben ein:" << endl;		//Decode
+	cin.getline(buf, 80);
+	input = string(buf, buf + NUM_OF_CHARS);
+	decodedInput = decode(input);
+	cout << decodedInput << endl;
 
 	for (int i = 0; i < 2; i++)
 	{
