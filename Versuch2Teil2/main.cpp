@@ -7,26 +7,32 @@
 //////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include <climits>
+
+using std::invalid_argument;
 
 int fib(int n)
 {
-	int prevFib = 1;
+	int prevFib = 0;
 	int currFib = 1;
-	if(n == 0)
+	if (n < 0)
 	{
-		return 0;
+		throw invalid_argument("n must not be negative!");
 	}
-	if(n == 1)
+	else if(n < 2)
 	{
-		return 1;
+		return n;
 	}
-	for (int i = 0; i <= n; i++)
+	else
 	{
-		int newFib = prevFib + currFib ;
-		prevFib = newFib ;
-		currFib = prevFib ;
+		for (int i = 0; i < n - 1; i++)
+		{
+			int newFib = prevFib + currFib;
+			prevFib = currFib;
+			currFib = newFib;
+		}
+		return currFib;
 	}
-	return currFib ;
 }
 
 int main ()
@@ -36,5 +42,14 @@ int main ()
 	{
 		std :: cout << "f(" << i << ") = " << fib (i) << std :: endl ;
 	}
+
+	int i;
+	i = fib(47);		//fib(42) took <= 1ms, value = 267914296					//runtime O(n)
+
+	getchar();			//fib(47) gives -1323752223
+	
+	unsigned long long maxfib = 12200160415121876738;
+	INT_MAX;			//max value of signed int; gratest fib smaller than that is fib(46) = 1836311903
+	ULLONG_MAX;			//changing the type of fib-function to usigned long long gives a max. value of 2^64-1; gratest fib smaller than that is fib(93) = 12200160415121876738
 	return 0;
 }

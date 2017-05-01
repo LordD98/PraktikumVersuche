@@ -12,14 +12,17 @@ int main()
 		cout << fib(i) << endl;
 	}
 
-	getchar();
+	int i;
+	i = fib(47);				//fib(42) took 24.448 ms = 24,5 s, value = 267914296			//runtime: O(2^n)
+
+ 	getchar();					//fib(47) gives -1323752223
 	return 0;
 }
 
 int fib(int n)
 {
 	if (n < 0)
-		throw invalid_argument("Number must be greater than or equal to 0");
+		throw invalid_argument("Number must be negative!");
 	else if (n <= 1)
 		return n;
 	else

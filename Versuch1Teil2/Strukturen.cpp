@@ -15,27 +15,46 @@ struct Person
 {
 	string sNachname, sVorname;
 	int iGeburtsjahr, iAlter;
-} nBenutzer;
+} nBenutzer, nKopieEinzeln, nKopieGesamt;
 
 void printPerson(Person p);
 
 int main()
 {
-	string sTemp[2];
+	char buf[80];
+	string temp;
 	cout << "Geben Sie Vornamen und Namen ein:" << endl;
-	cin.getline();
+	cin.getline(buf, 80);
 	cout << "In welchem Jahr wurden Sie geboren?" << endl;
 	cin >> nBenutzer.iGeburtsjahr;
 	cout << "Geben Sie ihr Alter ein:" << endl;
 	cin >> nBenutzer.iAlter;
 
-	int splitIndex = sTemp[1].find(' ', 0);
-	sTemp[0] = sTemp[1].substr(0, splitIndex);
-	sTemp[1] = sTemp[1].substr(splitIndex + 1, sTemp[0].length() - splitIndex);
-	nBenutzer.sVorname = sTemp[0];
-	nBenutzer.sNachname = sTemp[1];
-
+	temp = buf;
+	int splitIndex;
+	if (temp.find(',') < 0)										//User can either give his name in the form "<first name> <last name>" or "<last name>, <first name>"
+	{
+		splitIndex = static_cast<int>(static_cast<string>(buf).find(' ', 0));				//static cast to int not really necessary, but compiler gives a warning
+		nBenutzer.sVorname = temp.substr(0, splitIndex);
+		nBenutzer.sNachname = temp.substr(splitIndex + 1, temp.length() - splitIndex - 1);
+	}
+	else																					
+	{
+		splitIndex = static_cast<int>(static_cast<string>(buf).find(',', 0));				//static cast to int not really necessary, but compiler gives a warning
+		nBenutzer.sNachname = temp.substr(0, splitIndex);
+		nBenutzer.sVorname = temp.substr(splitIndex + 2, temp.length() - splitIndex - 2);
+	}
 	printPerson(nBenutzer);
+
+	nKopieEinzeln.iAlter = nBenutzer.iAlter;
+	nKopieEinzeln.iGeburtsjahr = nBenutzer.iGeburtsjahr;
+	nKopieEinzeln.sNachname = nBenutzer.sNachname;
+	nKopieEinzeln.sVorname = nBenutzer.sVorname;
+
+	nKopieGesamt = nBenutzer;
+
+	printPerson(nKopieEinzeln);
+	printPerson(nKopieGesamt);
 
 	getchar();
 	getchar();
