@@ -23,7 +23,7 @@ int main()
 {
 	string sTemp[2];
 	cout << "Geben Sie Vornamen und Namen ein:" << endl;
-	cin.getline()
+	cin.getline();
 	cout << "In welchem Jahr wurden Sie geboren?" << endl;
 	cin >> nBenutzer.iGeburtsjahr;
 	cout << "Geben Sie ihr Alter ein:" << endl;
