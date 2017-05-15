@@ -1,0 +1,102 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+
+
+Implements the main class.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a51b429e0a27c8d8c0008ef8557ac49d9}\label{main_8cpp_a51b429e0a27c8d8c0008ef8557ac49d9}} 
+\#define {\bfseries N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+H\+A\+RS}~5
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8cpp_a519b43d47305b877db7e27f88a541e3e}\label{main_8cpp_a519b43d47305b877db7e27f88a541e3e}} 
+char {\bfseries encode} (char c)
+\item 
+\mbox{\Hypertarget{main_8cpp_a4d52d40d484cd94979382d5ec3b866b7}\label{main_8cpp_a4d52d40d484cd94979382d5ec3b866b7}} 
+char {\bfseries decode} (char c)
+\item 
+\mbox{\Hypertarget{main_8cpp_a1e51a7a11d43577e9f9f97683eecc4cc}\label{main_8cpp_a1e51a7a11d43577e9f9f97683eecc4cc}} 
+char {\bfseries enigma} (char c)
+\item 
+\mbox{\Hypertarget{main_8cpp_a713c5a249ec95a0ee5a907f221ef1f0a}\label{main_8cpp_a713c5a249ec95a0ee5a907f221ef1f0a}} 
+string {\bfseries encode} (string s)
+\item 
+\mbox{\Hypertarget{main_8cpp_a96e3d6b1870d19d0f3d7e54dfee9da4e}\label{main_8cpp_a96e3d6b1870d19d0f3d7e54dfee9da4e}} 
+string {\bfseries decode} (string s)
+\item 
+\mbox{\Hypertarget{main_8cpp_a8128d13fa8d55e9aff0cc6a9b81ccf2e}\label{main_8cpp_a8128d13fa8d55e9aff0cc6a9b81ccf2e}} 
+string {\bfseries enigma} (string s)
+\item 
+\mbox{\Hypertarget{main_8cpp_af89b1dd77f2c9d260e0df3f61be8ccb4}\label{main_8cpp_af89b1dd77f2c9d260e0df3f61be8ccb4}} 
+void {\bfseries print\+Array} ()
+\item 
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char {\bfseries table} \mbox{[}2\mbox{]}\mbox{[}26\mbox{]}
+\item 
+char {\bfseries decoding\+Table} \mbox{[}2\mbox{]}\mbox{[}26\mbox{]}
+\item 
+char {\bfseries enigma\+Table} \mbox{[}2\mbox{]}\mbox{[}26\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements the main class. 
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a0606986393413edd93aed650562e7c3c}\label{main_8cpp_a0606986393413edd93aed650562e7c3c}} 
+\index{main.\+cpp@{main.\+cpp}!decoding\+Table@{decoding\+Table}}
+\index{decoding\+Table@{decoding\+Table}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{decoding\+Table}{decodingTable}}
+{\footnotesize\ttfamily char decoding\+Table\mbox{[}2\mbox{]}\mbox{[}26\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{ \{ \textcolor{charliteral}{'A'}, \textcolor{charliteral}{'B'}, \textcolor{charliteral}{'C'}, \textcolor{charliteral}{'D'}, \textcolor{charliteral}{'E'}, \textcolor{charliteral}{'F'}, \textcolor{charliteral}{'G'}, \textcolor{charliteral}{'H'}, \textcolor{charliteral}{'I'}, \textcolor{charliteral}{'J'}, \textcolor{charliteral}{'K'}, \textcolor{charliteral}{'L'}, \textcolor{charliteral}{'M'}, \textcolor{charliteral}{'N'}, \textcolor{charliteral}{'O'}, \textcolor{charliteral}{'P'}, \textcolor{charliteral}{'Q'}, \textcolor{charliteral}{'R'}, \textcolor{charliteral}{'S'}, \textcolor{charliteral}{'T'}, \textcolor{charliteral}{
+      'U'}, \textcolor{charliteral}{'V'}, \textcolor{charliteral}{'W'}, \textcolor{charliteral}{'X'}, \textcolor{charliteral}{'Y'}, \textcolor{charliteral}{'Z'} \},
+                              \{ \textcolor{charliteral}{'E'}, \textcolor{charliteral}{'W'}, \textcolor{charliteral}{'Z'}, \textcolor{charliteral}{'R'}, \textcolor{charliteral}{'I'}, \textcolor{charliteral}{'L'}, \textcolor{charliteral}{'Q'}, \textcolor{charliteral}{'B'}, \textcolor{charliteral}{'U'}, \textcolor{charliteral}{'C'}, \textcolor{charliteral}{'X'}, \textcolor{charliteral}{'N'}, \textcolor{charliteral}{'A'}, \textcolor{charliteral}{'F'}, \textcolor{charliteral}{'M'}, \textcolor{charliteral}{
+      'J'}, \textcolor{charliteral}{'P'}, \textcolor{charliteral}{'T'}, \textcolor{charliteral}{'K'}, \textcolor{charliteral}{'V'}, \textcolor{charliteral}{'S'}, \textcolor{charliteral}{'H'}, \textcolor{charliteral}{'G'}, \textcolor{charliteral}{'O'}, \textcolor{charliteral}{'D'}, \textcolor{charliteral}{'Y'} \}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8cpp_ac63530cd9cfb8891b90ceb57ae34c124}\label{main_8cpp_ac63530cd9cfb8891b90ceb57ae34c124}} 
+\index{main.\+cpp@{main.\+cpp}!enigma\+Table@{enigma\+Table}}
+\index{enigma\+Table@{enigma\+Table}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{enigma\+Table}{enigmaTable}}
+{\footnotesize\ttfamily char enigma\+Table\mbox{[}2\mbox{]}\mbox{[}26\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{ \{ \textcolor{charliteral}{'A'}, \textcolor{charliteral}{'B'}, \textcolor{charliteral}{'C'}, \textcolor{charliteral}{'D'}, \textcolor{charliteral}{'E'}, \textcolor{charliteral}{'F'}, \textcolor{charliteral}{'G'}, \textcolor{charliteral}{'H'}, \textcolor{charliteral}{'I'}, \textcolor{charliteral}{'J'}, \textcolor{charliteral}{'K'}, \textcolor{charliteral}{'L'}, \textcolor{charliteral}{'M'}, \textcolor{charliteral}{'N'}, \textcolor{charliteral}{'O'}, \textcolor{charliteral}{'P'}, \textcolor{charliteral}{'Q'}, \textcolor{charliteral}{'R'}, \textcolor{charliteral}{'S'}, \textcolor{charliteral}{'T'}, \textcolor{charliteral}{
+      'U'}, \textcolor{charliteral}{'V'}, \textcolor{charliteral}{'W'}, \textcolor{charliteral}{'X'}, \textcolor{charliteral}{'Y'}, \textcolor{charliteral}{'Z'} \},
+                            \{ \textcolor{charliteral}{'M'}, \textcolor{charliteral}{'T'}, \textcolor{charliteral}{'J'}, \textcolor{charliteral}{'Y'}, \textcolor{charliteral}{'U'}, \textcolor{charliteral}{'N'}, \textcolor{charliteral}{'W'}, \textcolor{charliteral}{'V'}, \textcolor{charliteral}{'Q'}, \textcolor{charliteral}{'C'}, \textcolor{charliteral}{'S'}, \textcolor{charliteral}{'P'}, \textcolor{charliteral}{'A'}, \textcolor{charliteral}{'F'}, \textcolor{charliteral}{'X'}, \textcolor{charliteral}{
+      'L'}, \textcolor{charliteral}{'I'}, \textcolor{charliteral}{'Z'}, \textcolor{charliteral}{'K'}, \textcolor{charliteral}{'B'}, \textcolor{charliteral}{'E'}, \textcolor{charliteral}{'H'}, \textcolor{charliteral}{'G'}, \textcolor{charliteral}{'O'}, \textcolor{charliteral}{'D'}, \textcolor{charliteral}{'R'} \}
+\}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8cpp_a6fd39c40615f5f36b26da95d09ad9bb2}\label{main_8cpp_a6fd39c40615f5f36b26da95d09ad9bb2}} 
+\index{main.\+cpp@{main.\+cpp}!table@{table}}
+\index{table@{table}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{table}{table}}
+{\footnotesize\ttfamily char table\mbox{[}2\mbox{]}\mbox{[}26\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{ \{ \textcolor{charliteral}{'A'}, \textcolor{charliteral}{'B'}, \textcolor{charliteral}{'C'}, \textcolor{charliteral}{'D'}, \textcolor{charliteral}{'E'}, \textcolor{charliteral}{'F'}, \textcolor{charliteral}{'G'}, \textcolor{charliteral}{'H'}, \textcolor{charliteral}{'I'}, \textcolor{charliteral}{'J'}, \textcolor{charliteral}{'K'}, \textcolor{charliteral}{'L'}, \textcolor{charliteral}{'M'}, \textcolor{charliteral}{'N'}, \textcolor{charliteral}{'O'}, \textcolor{charliteral}{'P'}, \textcolor{charliteral}{'Q'}, \textcolor{charliteral}{'R'}, \textcolor{charliteral}{'S'}, \textcolor{charliteral}{'T'}, \textcolor{charliteral}{
+      'U'}, \textcolor{charliteral}{'V'}, \textcolor{charliteral}{'W'}, \textcolor{charliteral}{'X'}, \textcolor{charliteral}{'Y'}, \textcolor{charliteral}{'Z'} \},
+                      \{ \textcolor{charliteral}{'M'}, \textcolor{charliteral}{'H'}, \textcolor{charliteral}{'J'}, \textcolor{charliteral}{'Y'}, \textcolor{charliteral}{'A'}, \textcolor{charliteral}{'N'}, \textcolor{charliteral}{'W'}, \textcolor{charliteral}{'V'}, \textcolor{charliteral}{'E'}, \textcolor{charliteral}{'P'}, \textcolor{charliteral}{'S'}, \textcolor{charliteral}{'F'}, \textcolor{charliteral}{'O'}, \textcolor{charliteral}{'L'}, \textcolor{charliteral}{'X'}, \textcolor{charliteral}{'Q'}, \textcolor{charliteral}{'G'}
+      , \textcolor{charliteral}{'D'}, \textcolor{charliteral}{'U'}, \textcolor{charliteral}{'R'}, \textcolor{charliteral}{'I'}, \textcolor{charliteral}{'T'}, \textcolor{charliteral}{'B'}, \textcolor{charliteral}{'K'}, \textcolor{charliteral}{'Z'}, \textcolor{charliteral}{'C'} \}
+\}
+\end{DoxyCode}

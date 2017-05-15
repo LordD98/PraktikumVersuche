@@ -1,4 +1,8 @@
-
+/*!
+ * \file	main.cpp.
+ *
+ * \brief	Implements the main class.
+ */
 
 #include <iostream>
 #include <algorithm>
