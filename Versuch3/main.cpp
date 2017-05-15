@@ -44,7 +44,6 @@ void initialize_field(int field[SIZE_Y][SIZE_X])
 	field[SIZE_Y / 2][SIZE_X / 2] = 1;
 }
 
-
 /**
 * @brief Prints the playing field to the console.
 *
@@ -189,12 +188,25 @@ bool turn_valid(const int field[SIZE_Y][SIZE_X], const int player, const int pos
 	return false;
 }
 
+/*!
+ * @fn	void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, const int pos_y)
+ *
+ * @brief	Executes the specified turn.
+ *
+ * This function executes a valid turn by the specified player on the given field.
+ * It doesn't return anything but it modifies the passed array.
+ *
+ * @param	field[SIZE_Y][SIZE_X]	The field.
+ * @param	player		 			The player who is on turn. (either 1 or 2)
+ * @param	pos_x		  			The x-coordinate of the position chosen by the player.
+ * @param	pos_y					The y-coordinate of the position chosen by the player.
+ */
 void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, const int pos_y)
 {
 	// very similar to function "turn_valid" - just take care that all opponent
 	// stones are changed to yours
 	 
-	if (!turn_valid(field, player, pos_x, pos_y)) return;
+	//if (!turn_valid(field, player, pos_x, pos_y)) return;
 
 	// Process all possible directions
 	int opponent = 3 - player; // the same as: if player = 1 -> opponent = 2 else
@@ -232,6 +244,16 @@ void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, 
 	field[pos_y][pos_x] = player;
 }
 
+/*!
+ * @fn	int possible_turns(const int field[SIZE_Y][SIZE_X], const int player)
+ *
+ * @brief	Calculates the number of possible turns for the specified player on the given field.
+ *
+ * @param	field[SIZE_Y][SIZE_X]			The field.
+ * @param	player							The player who is on turn. (either 1 or 2)
+ * 											
+ * @return	The amount of possible, valid turns.
+ */
 int possible_turns(const int field[SIZE_Y][SIZE_X], const int player)
 {
 	int count = 0;
@@ -245,6 +267,7 @@ int possible_turns(const int field[SIZE_Y][SIZE_X], const int player)
 	}
 	return count;
 }
+
 
 bool human_turn(int field[SIZE_Y][SIZE_X], const int player)
 {
@@ -283,6 +306,7 @@ bool human_turn(int field[SIZE_Y][SIZE_X], const int player)
 	return true;
 }
 
+
 void game(const int player_typ[2])
 {
 
@@ -294,6 +318,8 @@ void game(const int player_typ[2])
 	int current_player = 1;
 	show_field(field);
 	//let each player make its moves until no further moves are possible
+
+
 
 	switch (winner(field))
 	{
