@@ -21,9 +21,8 @@ void \hyperlink{main_8cpp_a89dd8754fb2cb1c6d007cd6c4b8de248}{initialize\+\_\+fie
 \begin{DoxyCompactList}\small\item\em Function providing first initialization of a new field. \end{DoxyCompactList}\item 
 void \hyperlink{main_8cpp_aacdbfaa6045beffcf99b25f92f979b29}{show\+\_\+field} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]})
 \begin{DoxyCompactList}\small\item\em Prints the playing field to the console. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{main_8cpp_ad4e85a4813dd17886bcb1704ffa49bca}\label{main_8cpp_ad4e85a4813dd17886bcb1704ffa49bca}} 
-int {\bfseries winner} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]})
-\item 
+int \hyperlink{main_8cpp_ad4e85a4813dd17886bcb1704ffa49bca}{winner} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]})
+\begin{DoxyCompactList}\small\item\em Determines the winner of a given end-\/situation. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{main_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}\label{main_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}} 
 bool {\bfseries turn\+\_\+valid} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
 \item 
@@ -92,3 +91,21 @@ The function prints the playing field, grid included, to the console. Crosses sy
 {\em field} & The field which is going to be printed \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_ad4e85a4813dd17886bcb1704ffa49bca}\label{main_8cpp_ad4e85a4813dd17886bcb1704ffa49bca}} 
+\index{main.\+cpp@{main.\+cpp}!winner@{winner}}
+\index{winner@{winner}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{winner()}{winner()}}
+{\footnotesize\ttfamily int winner (\begin{DoxyParamCaption}\item[{const int}]{field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Determines the winner of a given end-\/situation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field of size S\+I\+Z\+E\+\_\+X x S\+I\+Z\+E\+\_\+X.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The winner code\+: 0\+: =$>$ draw, 1\+: =$>$ player 1 wins, 2\+: =$>$ player 2 wins. 
+\end{DoxyReturn}

@@ -94,8 +94,8 @@ Functions</h2></td></tr>
 <tr class="memitem:aacdbfaa6045beffcf99b25f92f979b29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#aacdbfaa6045beffcf99b25f92f979b29">show_field</a> (const int field[SIZE_Y][SIZE_X])</td></tr>
 <tr class="memdesc:aacdbfaa6045beffcf99b25f92f979b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the playing field to the console.  <a href="#aacdbfaa6045beffcf99b25f92f979b29">More...</a><br /></td></tr>
 <tr class="separator:aacdbfaa6045beffcf99b25f92f979b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4e85a4813dd17886bcb1704ffa49bca"><td class="memItemLeft" align="right" valign="top"><a id="ad4e85a4813dd17886bcb1704ffa49bca"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>winner</b> (const int field[SIZE_Y][SIZE_X])</td></tr>
+<tr class="memitem:ad4e85a4813dd17886bcb1704ffa49bca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#ad4e85a4813dd17886bcb1704ffa49bca">winner</a> (const int field[SIZE_Y][SIZE_X])</td></tr>
+<tr class="memdesc:ad4e85a4813dd17886bcb1704ffa49bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the winner of a given end-situation.  <a href="#ad4e85a4813dd17886bcb1704ffa49bca">More...</a><br /></td></tr>
 <tr class="separator:ad4e85a4813dd17886bcb1704ffa49bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbf34a9e8028eb4911abf42d6dee0dea"><td class="memItemLeft" align="right" valign="top"><a id="afbf34a9e8028eb4911abf42d6dee0dea"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>turn_valid</b> (const int field[SIZE_Y][SIZE_X], const int player, const int pos_x, const int pos_y)</td></tr>
@@ -106,8 +106,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>execute_turn</b> (int
 <tr class="memitem:abc856bca74fb081e1a6703227217f64d"><td class="memItemLeft" align="right" valign="top"><a id="abc856bca74fb081e1a6703227217f64d"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>possible_turns</b> (const int field[SIZE_Y][SIZE_X], const int player)</td></tr>
 <tr class="separator:abc856bca74fb081e1a6703227217f64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a180065e4a35cf0e26734f92a6408d607"><td class="memItemLeft" align="right" valign="top"><a id="a180065e4a35cf0e26734f92a6408d607"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>test_winner</b> (const int field[SIZE_Y][SIZE_X], const int winner_code)</td></tr>
+<tr class="memitem:a180065e4a35cf0e26734f92a6408d607"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8cpp.html#a180065e4a35cf0e26734f92a6408d607">test_winner</a> (const int field[SIZE_Y][SIZE_X], const int winner_code)</td></tr>
+<tr class="memdesc:a180065e4a35cf0e26734f92a6408d607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests the winner function.  <a href="#a180065e4a35cf0e26734f92a6408d607">More...</a><br /></td></tr>
 <tr class="separator:a180065e4a35cf0e26734f92a6408d607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a032cb3f8be8d0a8de5e19db5b4baa0ec"><td class="memItemLeft" align="right" valign="top"><a id="a032cb3f8be8d0a8de5e19db5b4baa0ec"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>test_turn_valid</b> (const int field[SIZE_Y][SIZE_X], const int player, const int pos_x, const int pos_y, const bool valid)</td></tr>
@@ -150,6 +150,72 @@ The function prints the playing field, grid included, to the console. Crosses sy
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a180065e4a35cf0e26734f92a6408d607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180065e4a35cf0e26734f92a6408d607">&#9670;&nbsp;</a></span>test_winner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool test_winner </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>field</em>[SIZE_Y][SIZE_X], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>winner_code</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tests the winner function. </p>
+<p>Tests the winner function by passing its arguments to the winner function and compares the return code to the expected code If they match, true is returned, 0 otherwise.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field[SIZE_X]</td><td>The field. </td></tr>
+    <tr><td class="paramname">winner_code</td><td>The expected winner code.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the test passes, false if the test fails. </dd></dl>
+
+</div>
+</div>
+<a id="ad4e85a4813dd17886bcb1704ffa49bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4e85a4813dd17886bcb1704ffa49bca">&#9670;&nbsp;</a></span>winner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int winner </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>field</em>[SIZE_Y][SIZE_X]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determines the winner of a given end-situation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field[SIZE_X]</td><td>The field of size SIZE_X x SIZE_X.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The winner code: 0: =&gt; draw, 1: =&gt; player 1 wins, 2: =&gt; player 2 wins. </dd></dl>
 
 </div>
 </div>

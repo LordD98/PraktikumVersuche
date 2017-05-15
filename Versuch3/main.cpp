@@ -32,18 +32,17 @@
 void initialize_field(int field[SIZE_Y][SIZE_X])
 {
 	for (int j = 0; j < SIZE_Y; j++)
+	{
+		for(int i = 0; i < SIZE_X; i++)
 		{
-			for(int i = 0; i < SIZE_X; i++)
-			{
-				field[j][i] = 0;
-			}
+			field[j][i] = 0;
 		}
-		field[SIZE_Y / 2 - 1][SIZE_X / 2 - 1] = 1;
-		field[SIZE_Y / 2][SIZE_X / 2 - 1] = 2;
-		field[SIZE_Y / 2 - 1][SIZE_X / 2] = 2;
-		field[SIZE_Y / 2][SIZE_X / 2] = 1;
+	}
+	field[SIZE_Y / 2 - 1][SIZE_X / 2 - 1] = 1;
+	field[SIZE_Y / 2][SIZE_X / 2 - 1] = 2;
+	field[SIZE_Y / 2 - 1][SIZE_X / 2] = 2;
+	field[SIZE_Y / 2][SIZE_X / 2] = 1;
 }
-
 
 
 /**
@@ -93,6 +92,18 @@ void show_field(const int field[SIZE_Y][SIZE_X])
 	}//for j
 }
 
+/*!
+ * @fn	int winner(const int field[SIZE_Y][SIZE_X])
+ *
+ * @brief	Determines the winner of a given end-situation.
+ *
+ * @param	field[SIZE_X]	The field of size SIZE_X x SIZE_X.
+ *
+ * @return	The winner code:
+ * 							0:		=>		draw,
+ * 							1:		=>		player 1 wins,   
+ * 							2:		=>		player 2 wins.  
+ */
 int winner(const int field[SIZE_Y][SIZE_X])
 {
 	int count_p1 = 0;
@@ -127,6 +138,20 @@ int winner(const int field[SIZE_Y][SIZE_X])
 	}
 }
 
+/*!
+ * @fn	bool turn_valid(const int field[SIZE_Y][SIZE_X], const int player, const int pos_x, const int pos_y)
+ *
+ * @brief	This function checks the specified turn is valid.
+ * 			
+ * This function checks if the given position on the field is a valid position to put a tile for the given player.
+ *
+ * @param	field[SIZE_X]	The field.
+ * @param	player		 	The player who is on turn.
+ * @param	pos_x		 	The x coordinate of the turn needing to be checked.
+ * @param	pos_y		 	The y coordinate of the turn needing to be checked.
+ *
+ * @return	True if the player is able to make a valid move, false if he isn't.
+ */
 bool turn_valid(const int field[SIZE_Y][SIZE_X], const int player, const int pos_x, const int pos_y)
 {
 	// Process all possible directions
@@ -146,6 +171,19 @@ bool turn_valid(const int field[SIZE_Y][SIZE_X], const int player, const int pos
 			//then check if in this direction all stones are opponent stones until
 			//the line is terminated by one of your own stone
 			//in that case return true otherwise not
+			if(i == 0 &&  j == 0)
+				continue;
+			if (field[pos_y + i][pos_x + j] == opponent)
+			{
+				int currentX = pos_x + j, currentY = pos_y + i;
+				while (field[currentY][currentX] != 0 && currentX >= 0 && currentX < SIZE_X && currentY < SIZE_Y && currentY >= 0)
+				{
+					if (field[currentY][currentX] == player)
+						return true;
+					currentX += j;
+					currentY += i;
+				}
+			}
 		}
 	}
 	return false;
@@ -155,6 +193,42 @@ void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, 
 {
 	// very similar to function "turn_valid" - just take care that all opponent
 	// stones are changed to yours
+	 
+	if (!turn_valid(field, player, pos_x, pos_y)) return;
+
+	// Process all possible directions
+	int opponent = 3 - player; // the same as: if player = 1 -> opponent = 2 else
+								// if player = 2 -> opponent = 1
+	
+	for (int i = -1; i <= 1; i++)							//Y
+	{
+		for (int j = -1; j <= 1; j++)						//X
+		{
+			if (i == 0 && j == 0)
+				continue;
+			if (field[pos_y + i][pos_x + j] == opponent)
+			{
+				int currentX = pos_x + j, currentY = pos_y + i;
+				while (field[currentY][currentX] != 0 && currentX >= 0 && currentX < SIZE_X && currentY < SIZE_Y && currentY >= 0)
+				{
+					if (field[currentY][currentX] == player)
+					{
+						currentX = pos_x + j;
+						currentY = pos_y + i;
+						while (field[currentY][currentX] == opponent)
+						{
+							field[currentY][currentX] = player;			//Change captured opponent's tiles to player's tiles  
+							currentX += j;
+							currentY += i;
+						}
+						continue;
+					}
+					currentX += j;
+					currentY += i;
+				}
+			}
+		}
+	}
 }
 
 int possible_turns(const int field[SIZE_Y][SIZE_X], const int player)
@@ -240,5 +314,7 @@ int main(void)
 
 	// int player_type[2] = { HUMAN, HUMAN };  //Contains information wether players are HUMAN(=1) or COPMUTER(=2)
 	// game(player_type);
+	
+	std::getchar();
 	return 0;
 }
