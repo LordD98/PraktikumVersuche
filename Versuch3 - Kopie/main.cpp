@@ -18,6 +18,7 @@
 #include "test.h"
 #include "config.h"
 #include "Reversi_KI.h"
+#include <string>
 #include <iostream>
 #include <stdlib.h>
 #include <string>
@@ -43,6 +44,7 @@ void initialize_field(int field[SIZE_Y][SIZE_X])
 	field[SIZE_Y / 2 - 1][SIZE_X / 2] = 2;
 	field[SIZE_Y / 2][SIZE_X / 2] = 1;
 }
+
 
 /**
 * @brief Prints the playing field to the console.
@@ -353,14 +355,11 @@ void game(const int player_typ[2])
 	//let each player make its moves until no further moves are possible
 
 	auto PL_SYMB = [](int player) { return player == 1 ? "X" : "O";  };					//return symbol for given player
-
 	while (true)
 	{
-		//when false, the player passed the turn
-		bool passed = player_typ[current_player - 1] == HUMAN ? !human_turn(field, current_player) : !computer_turn(field, current_player);
-		if (passed)													//<human|computer>_turn returns false if no turn is possible
-		{
-			if (possible_turns(field, 3 - current_player) == 0)		//if the opponent is also not able to make a turn, the game ends
+		if (!human_turn(field, current_player))						//human_turn returns false if no turn is possible
+		{ 
+			if(possible_turns(field, 3 - current_player) == 0)		//if the opponent is also not able to make a turn, the game ends
 				break;
 			else
 			{
@@ -403,48 +402,13 @@ int main(void)
 		}
 	}
 
-
-	//int player_type[2] = { HUMAN, COMPUTER };  //Contains information wether players are HUMAN(=1) or COPMUTER(=2)
-	int player_type[2] = {0, 0};
-	std::cout << "Enter gamemode: C = Computer & H = Human" << std::endl << "ie. \"H,C\" or \"human - C\" for Human vs Computer" << std::endl;
-	while (true)
-	{
-		char str[32];
-		std::cin.getline(str, 32);
-		std::string s(str);
-		if (s[0] == 'H' || s[0] == 'h')
-		{
-			player_type[0] = HUMAN;
-		} 
-		else if(s[0] == 'C' || s[0] == 'c')
-		{
-			player_type[0] = COMPUTER;
-		}
-		if (s[s.length()-1] == 'H' || s[s.length() - 1] == 'h')
-		{
-			player_type[1] = HUMAN;
-		}
-		else if ((s[s.length() - 1] == 'N' || s[s.length() - 1] == 'n') && (s[s.length() - 5] == 'h' || s[s.length() - 5] == 'H'))
-			player_type[1] = HUMAN;
-		else if (s[s.length() - 1] == 'C' || s[s.length() - 1] == 'c')
-		{
-			player_type[1] = COMPUTER;
-		}
-		else if((s[s.length() - 1] == 'R' || s[s.length() - 1] == 'r') && (s[s.length()-8] == 'c' || s[s.length() - 8] == 'C'))
-			player_type[1] = COMPUTER;
-		if (player_type[0] * player_type[1] == 0)
-			std::cout << "Invalid format! Please choose the gamemode:" << std::endl;
-		else break;
-	}
-	std::string players[] = { "", "HUMAN", "COMPUTER" };
-	std::cout << "You chose " << players[player_type[0]] + " vs " + players[player_type[1]] << "!" << std::endl << std::endl;
-
 	int field[SIZE_Y][SIZE_X];
 
 	initialize_field(field);
 
 	show_field(field);
-	
+
+	int player_type[2] = { HUMAN, HUMAN };  //Contains information wether players are HUMAN(=1) or COPMUTER(=2)
 	game(player_type);
 	
 	std::getchar();
