@@ -395,12 +395,11 @@ int main(void)
 		bool result = run_full_test();
 		if (result == true)
 		{
-			std::cout << "ALL TESTS PASSED!" << std::endl << std::endl;
+			std::cout << "ALL TESTS PASSED!" << std::endl;
 		}
 		else
 		{
 			std::cout << "TEST FAILED!" << std::endl;
-			return -1;
 		}
 	}
 
