@@ -221,7 +221,7 @@ void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, 
 							currentX += j;
 							currentY += i;
 						}
-						break;
+						continue;
 					}
 					currentX += j;
 					currentY += i;
@@ -229,21 +229,11 @@ void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, 
 			}
 		}
 	}
-	field[pos_y][pos_x] = player;
 }
 
 int possible_turns(const int field[SIZE_Y][SIZE_X], const int player)
 {
-	int count = 0;
-	for (int i = 0; i < SIZE_Y; i++)
-	{
-		for (int j = 0; j < SIZE_X; j++)
-		{
-			if (turn_valid(field, player, j, i))
-				count++;
-		}
-	}
-	return count;
+	return 0;
 }
 
 bool human_turn(int field[SIZE_Y][SIZE_X], const int player)
