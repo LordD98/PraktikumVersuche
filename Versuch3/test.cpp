@@ -19,9 +19,9 @@ extern int possible_turns(const int field[SIZE_Y][SIZE_X], const int player);
 /*!
  * @fn	bool test_winner(const int field[SIZE_Y][SIZE_X], const int winner_code)
  *
- * @brief	Tests the winner function.
+ * @brief	Tests the "winner"-function.
  * 			
- *			Tests the winner function by passing its arguments to the winner function
+ *			Tests the "winner"-function by passing its arguments to the "winner"-function
  *			and compares the return code to the expected code
  *			If they match, true is returned, otherwise false.
  *
@@ -59,14 +59,14 @@ bool test_winner(const int field[SIZE_Y][SIZE_X], const int winner_code)
 /*!
  * @fn	bool test_turn_valid(const int field[SIZE_Y][SIZE_X], const int player, const int pos_x, const int pos_y, const bool valid)
  *
- * @brief	Tests the turn_valid function.
+ * @brief	Tests the "turn_valid"-function.
  *
- *			Tests the turn_valid function by passing its arguments to the turn_valid function
+ *			Tests the "turn_valid"-function by passing its arguments to the "turn_valid"-function
  *			and compares the return code to the expected value
  *			If they match, true is returned, otherwise false.
  *			
  * @param	field[SIZE_Y][SIZE_X]	The field.
- * @param	player		 			The player who is on turn.
+ * @param	player		 			The player who is on turn. (either 1 or 2)
  * @param	pos_x		 			The x-coordinate of the position to check.
  * @param	pos_y		 			The y-coordinate of the position to check.
  * @param	valid		 			The expected return code of the turn_valid function.
@@ -76,7 +76,9 @@ bool test_winner(const int field[SIZE_Y][SIZE_X], const int winner_code)
 bool test_turn_valid(const int field[SIZE_Y][SIZE_X], const int player, const int pos_x,
 					 const int pos_y, const bool valid)
 {
-	//show_field(field);
+	show_field(field);
+	std::cout << "Player on turn: " << player << std::endl;
+	std::cout << "X, Y: " << pos_x << ", " << pos_y << std::endl;
 
 	// check for a given field whether a turn is valid
 
@@ -85,10 +87,26 @@ bool test_turn_valid(const int field[SIZE_Y][SIZE_X], const int player, const in
 		std::cout << "Turn_valid function passed the test!" << std::endl << std::endl;
 	else
 		std::cout << "Error in turn_valid function!" << std::endl << std::endl;
-
 	return passed;
 }
 
+/*!
+* @fn	bool test_execute_turn(int input[SIZE_Y][SIZE_X], const int output[SIZE_Y][SIZE_X], const int player, const int pos_x, const int pos_y)
+*
+* @brief	Tests the execute_turn function.
+*
+*			Tests the execute_turn function by passing its arguments to the execute_turn function
+*			and compares the modified input field to the expected (already known output field)
+*			If they match, true is returned, otherwise false.
+*
+* @param	input[SIZE_Y][SIZE_X] 	The input field.
+* @param	output[SIZE_Y][SIZE_X]	The expected output field.
+* @param	player		  	The player who is on turn. (either 1 or 2)
+* @param	pos_x		  	The x-coordinate of the position chosen by the player.
+* @param	pos_y		  	The y-coordinate of the position chosen by the player.
+*
+* @return	True if the test passes, false if the test fails.
+*/
 bool test_execute_turn(int input[SIZE_Y][SIZE_X], const int output[SIZE_Y][SIZE_X],
 					   const int player, const int pos_x, const int pos_y)
 {
@@ -113,13 +131,39 @@ bool test_execute_turn(int input[SIZE_Y][SIZE_X], const int output[SIZE_Y][SIZE_
 	return true;
 }
 
+/*!
+* @fn	bool test_possible_turns(const int field[SIZE_Y][SIZE_X], const int player, const int count_possible_turns)
+*
+* @brief	Tests the possible_turns function.
+*
+*			Tests the "possible_turns"-function by passing its arguments to the "posible_turns"-function
+*			and compares the returned value to the expected (already known output count_possible_turns)
+*			If they match, true is returned, otherwise false.
+*
+* @param	field[SIZE_Y][SIZE_X]			The field.
+* @param	player							The player who is on turn. (either 1 or 2)
+* @param	count_possible_turns			The expected count of possible turns.
+*
+* @return	True if the test passes, false if the test fails.
+*/
 bool test_possible_turns(const int field[SIZE_Y][SIZE_X], const int player,
 						 const int count_possible_turns)
 {
 	// very if your function finds all possible turns
-	return 0;
+	if (possible_turns(field, player) == count_possible_turns)
+		return true;
+	else return false;
 }
 
+/*!
+* @fn	bool run_full_test(void)
+*
+* @brief	Executes the full test operation.
+*
+* This function executes all tests one after each other and checks if they all run correct.
+*
+* @return	True if all tests pass, false if at least one of the tests fails.
+*/
 bool run_full_test(void)
 {
 	bool result = true;

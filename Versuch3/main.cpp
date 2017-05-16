@@ -18,6 +18,7 @@
 #include "test.h"
 #include "config.h"
 #include "Reversi_KI.h"
+#include <string>
 #include <iostream>
 #include <stdlib.h>
 #include <string>
@@ -33,7 +34,7 @@ void initialize_field(int field[SIZE_Y][SIZE_X])
 {
 	for (int j = 0; j < SIZE_Y; j++)
 	{
-		for(int i = 0; i < SIZE_X; i++)
+		for (int i = 0; i < SIZE_X; i++)
 		{
 			field[j][i] = 0;
 		}
@@ -189,6 +190,19 @@ bool turn_valid(const int field[SIZE_Y][SIZE_X], const int player, const int pos
 	return false;
 }
 
+/*!
+* @fn	void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, const int pos_y)
+*
+* @brief	Executes the specified turn.
+*
+* This function executes a valid turn by the specified player on the given field.
+* It doesn't return anything but it modifies the passed array.
+*
+* @param	field[SIZE_Y][SIZE_X]	The field.
+* @param	player		 			The player who is on turn. (either 1 or 2)
+* @param	pos_x		  			The x-coordinate of the position chosen by the player.
+* @param	pos_y					The y-coordinate of the position chosen by the player.
+*/
 void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, const int pos_y)
 {
 	// very similar to function "turn_valid" - just take care that all opponent
@@ -197,22 +211,26 @@ void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, 
 	if (!turn_valid(field, player, pos_x, pos_y)) return;
 
 	// Process all possible directions
-	int opponent = 3 - player; // the same as: if player = 1 -> opponent = 2 else
-								// if player = 2 -> opponent = 1
-	
-	for (int i = -1; i <= 1; i++)							//Y
+	int opponent = 3 - player;	// the same as: if player = 1 -> opponent = 2
+								//		   else if player = 2 -> opponent = 1
+								
+	//loop over all directions going out from current position
+	for (int i = -1; i <= 1; i++)									//Y-direction		
 	{
-		for (int j = -1; j <= 1; j++)						//X
+		for (int j = -1; j <= 1; j++)								//X-direction
 		{
-			if (i == 0 && j == 0)
+			if (i == 0 && j == 0)									//no direction, ignore case
 				continue;
-			if (field[pos_y + i][pos_x + j] == opponent)
+			if (field[pos_y + i][pos_x + j] == opponent)			//check if position is held by opponent
 			{
-				int currentX = pos_x + j, currentY = pos_y + i;
+				int currentX = pos_x + j, currentY = pos_y + i;		//initialize cursor: current<Y,X>
+				
+				//do while cursor is on the field and doesn't point to an empty location
 				while (field[currentY][currentX] != 0 && currentX >= 0 && currentX < SIZE_X && currentY < SIZE_Y && currentY >= 0)
 				{
-					if (field[currentY][currentX] == player)
+					if (field[currentY][currentX] == player)			//if location is held by player
 					{
+						//replace all opponent's tiles between original turn position and first player's tile in the current direction
 						currentX = pos_x + j;
 						currentY = pos_y + i;
 						while (field[currentY][currentX] == opponent)
@@ -221,7 +239,7 @@ void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, 
 							currentX += j;
 							currentY += i;
 						}
-						continue;
+						break;
 					}
 					currentX += j;
 					currentY += i;
@@ -229,20 +247,53 @@ void execute_turn(int field[SIZE_Y][SIZE_X], const int player, const int pos_x, 
 			}
 		}
 	}
+	field[pos_y][pos_x] = player;
 }
 
+/*!
+* @fn	int possible_turns(const int field[SIZE_Y][SIZE_X], const int player)
+*
+* @brief	Calculates the number of possible turns for the specified player on the given field.
+*
+* @param	field[SIZE_Y][SIZE_X]			The field.
+* @param	player							The player who is on turn. (either 1 or 2)
+*
+* @return	The amount of possible, valid turns.
+*/
 int possible_turns(const int field[SIZE_Y][SIZE_X], const int player)
 {
-	return 0;
+	int count = 0;
+	//Loop over the the whole field
+	for (int y = 0; y < SIZE_Y; y++)
+	{
+		for (int x = 0; x < SIZE_X; x++)
+		{	
+			//Increase counter if a valid turn is found
+			if (turn_valid(field, player, x, y))
+				count++;
+		}
+	}
+	return count;
 }
 
+/*!
+ * @fn	bool human_turn(int field[SIZE_Y][SIZE_X], const int player)
+ *
+ * @brief	This function lets the player specify his turn
+ *
+ * @param	field[SIZE_Y][SIZE_X]	The field.
+ * @param	player		 			The player who is on turn. (either 1 or 2)
+ *
+ * @return	True if it succeeds, false if it fails.
+ */
 bool human_turn(int field[SIZE_Y][SIZE_X], const int player)
 {
 	if (possible_turns(field, player) == 0)
 	{
 		return false;
 	}
-
+	auto PL_SYMB = [](int player) { return player == 1 ? "X" : "O";  };					//return symbol for given player
+	std::cout << std::endl << PL_SYMB(player) << " is on turn!" << std::endl;
 	int px;
 	int py;
 	bool repeat=false;
@@ -273,21 +324,66 @@ bool human_turn(int field[SIZE_Y][SIZE_X], const int player)
 	return true;
 }
 
+/*!
+ * @fn	void game(const int player_typ[2])
+ *
+ * @brief	Runs the main game and prints out the winner.
+ *
+ * @param	player_typ	Determines the mode in which the game is (HUMAN vs HUMAN, HUMAN vs CPU, etc.).
+ */
 void game(const int player_typ[2])
 {
 
-	int field[SIZE_Y][SIZE_X];
-
-	//Create starting pattern
-	initialize_field(field);
+	#ifdef MISS_TURN_DEMO
+	int field[SIZE_Y][SIZE_X] = {	{ 0, 1, 1, 1, 1, 1, 1, 0 },
+									{ 1, 2, 1, 1, 1, 1, 2, 1 },
+									{ 1, 1, 1, 1, 1, 1, 1, 1 },
+									{ 1, 1, 1, 1, 1, 1, 1, 1 },
+									{ 1, 1, 1, 1, 1, 1, 1, 1 },
+									{ 1, 1, 1, 1, 1, 1, 1, 1 },
+									{ 1, 2, 1, 1, 1, 1, 2, 1 },
+									{ 0, 1, 1, 1, 1, 1, 1, 0 },
+	};
+	#else
+		int field[SIZE_Y][SIZE_X];
+		//Create starting pattern
+		initialize_field(field);
+	#endif
 
 	int current_player = 1;
 	show_field(field);
 	//let each player make its moves until no further moves are possible
 
+	auto PL_SYMB = [](int player) { return player == 1 ? "X" : "O";  };					//return symbol for given player
+	while (true)
+	{
+		if (!human_turn(field, current_player))						//human_turn returns false if no turn is possible
+		{ 
+			if(possible_turns(field, 3 - current_player) == 0)		//if the opponent is also not able to make a turn, the game ends
+				break;
+			else
+			{
+				std::cout << std::endl << PL_SYMB(current_player) << " is not able to make a valid turn so it's " << PL_SYMB(3 - current_player) << "'s turn again!" << std::endl << std::endl;
+			}
+		}
+		current_player = 3 - current_player;
+		show_field(field);
+	}
+
 	switch (winner(field))
 	{
-
+	case 1:
+		std::cout << std::endl << "Player 1 (X) wins!" << std::endl;
+		break;
+	case 2:
+		std::cout << std::endl << "Player 2 (O) wins!" << std::endl;
+		break;
+	case 0:
+		std::cout << std::endl << "Draw!" << std::endl;
+		break;
+	default:
+		std::cout <<std::endl << "FEHLER IN DER MATRIX!" << std::endl;
+		break;
 	}
 }
 
@@ -310,11 +406,12 @@ int main(void)
 
 	initialize_field(field);
 
-	//show_field(field);
+	show_field(field);
 
-	// int player_type[2] = { HUMAN, HUMAN };  //Contains information wether players are HUMAN(=1) or COPMUTER(=2)
-	// game(player_type);
+	int player_type[2] = { HUMAN, HUMAN };  //Contains information wether players are HUMAN(=1) or COPMUTER(=2)
+	game(player_type);
 	
+	std::getchar();
 	std::getchar();
 	return 0;
 }
