@@ -34,14 +34,14 @@ void Vektor::rotateAroundZ(const double rad)
 	rotationMatrix[2][1] = 0;
 	rotationMatrix[2][2] = 1;
 
-	transformWithMatrix(rotationMatrix);
+	this->transformWithMatrix(rotationMatrix);
 }
 
 void Vektor::transformWithMatrix(const double transformationMatrix[DIM][DIM])
 {
 	x = x*transformationMatrix[0][0] + y*transformationMatrix[0][1] + z*transformationMatrix[0][2];
 	y = x*transformationMatrix[1][0] + y*transformationMatrix[1][1] + z*transformationMatrix[1][2];
-	y = x*transformationMatrix[2][0] + y*transformationMatrix[2][1] + z*transformationMatrix[2][2];
+	z = x*transformationMatrix[2][0] + y*transformationMatrix[2][1] + z*transformationMatrix[2][2];
 }
 
 double Vektor::angle(const Vektor &input) const
