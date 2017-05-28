@@ -9,6 +9,9 @@
 #ifndef Vektor_H
 #define Vektor_H
 
+#define PI 3.141592653589793238
+#define DIM 3
+
 class Vektor
 {
    public:
@@ -31,10 +34,13 @@ class Vektor
     
     void ausgabe() const;
 
+	void transformWithMatrix(const double transformationMatrix[DIM][DIM]);
+
    private:
     double x;
     double y;
     double z;
+	double rotationMatrix[DIM][DIM] = { {0,0,0},{0,0,0},{0,0,0} };
 
 };
 
