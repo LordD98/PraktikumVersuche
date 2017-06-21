@@ -7,10 +7,6 @@
 //////////////////////////////////////////////////////////////////////////////
 
 #include "Vektor.h"
-#include <cmath>
-#include <iostream>
-
-using namespace std;
 
 Vektor::Vektor(double inX, double inY, double inZ) : x(inX), y(inY), z(inZ)
 {
@@ -39,14 +35,16 @@ void Vektor::rotateAroundZ(const double rad)
 
 void Vektor::transformWithMatrix(const double transformationMatrix[DIM][DIM])
 {
-	x = x*transformationMatrix[0][0] + y*transformationMatrix[0][1] + z*transformationMatrix[0][2];
-	y = x*transformationMatrix[1][0] + y*transformationMatrix[1][1] + z*transformationMatrix[1][2];
-	z = x*transformationMatrix[2][0] + y*transformationMatrix[2][1] + z*transformationMatrix[2][2];
+	double tempX = x, tempY = y, tempZ = z;
+	x = tempX*transformationMatrix[0][0] + tempY*transformationMatrix[0][1] + tempZ*transformationMatrix[0][2];
+	y = tempX*transformationMatrix[1][0] + tempY*transformationMatrix[1][1] + tempZ*transformationMatrix[1][2];
+	z = tempX*transformationMatrix[2][0] + tempY*transformationMatrix[2][1] + tempZ*transformationMatrix[2][2];
+	this->roundV();
 }
 
 double Vektor::angle(const Vektor &input) const
 {
-	return 360.0/2.0/PI * acos(this->scalarProd(input)/(this->length()*input.length()));
+	return roundD(acos(this->scalarProd(input)/(this->length()* input.length())) / (2.0*PI));
 }
 
 double Vektor::scalarProd(const Vektor& input) const
@@ -56,7 +54,11 @@ double Vektor::scalarProd(const Vektor& input) const
 
 bool Vektor::ortho(const Vektor &input) const
 {
-	if (this->scalarProd(input)  == 0)
+#ifdef EPSCMP
+	if (fabs(this->scalarProd(input)) < EPSILON)
+#else
+	if (this->scalarProd(input) == 0)
+#endif
 		return true;
 	else return false;
 }
@@ -76,13 +78,17 @@ double Vektor::length() const
 	return sqrt(this->scalarProd(*this));
 }
 
+void Vektor::kurzeAusgabe() const
+{
+	cout << "(" << x << ", " << y << ", " << z << ")" << endl;
+}
+
 void Vektor::ausgabe() const
 {
 	cout << "Vektor:" << endl;
 	cout << "X-Koordinate: " << x << endl;
 	cout << "Y-Koordinate: " << y << endl;
 	cout << "Z-Koordinate: " << z << endl;
-
 }
 
 double Vektor::getX() const
@@ -98,4 +104,27 @@ double Vektor::getY() const
 double Vektor::getZ() const
 {
 	return z;
+}
+
+string Vektor::toString() const
+{
+	return "(" + to_string(x) + ", " + to_string(y) + ", " + to_string(z) + ")";
+}
+
+void Vektor::roundV()
+{
+#ifdef ROUND
+	roundD(x);
+	roundD(y);
+	roundD(z);
+#endif
+}
+
+double Vektor::roundD(double d)
+{
+	for (int i = -10; i <= 10; i++)
+	{
+		if (fabs(d - static_cast<double>(i)) < EPSILON)
+			return static_cast<double>(i);
+	}
 }
