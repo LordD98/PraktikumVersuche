@@ -52,7 +52,7 @@ void initialize_field(int field[SIZE_Y][SIZE_X])
 * <br>The function prints the playing field, grid included, to the console.
 * Crosses symbolize player 1 while circles symbolize player 2.
 *
-*  @param field  The field which is going to be printed
+*  @param field[SIZE_Y][SIZE_X]  The field to be printed
 */
 void show_field(const int field[SIZE_Y][SIZE_X])
 {
@@ -96,7 +96,7 @@ void show_field(const int field[SIZE_Y][SIZE_X])
  *
  * @brief	Determines the winner of a given end-situation.
  *
- * @param	field[SIZE_X]	The field of size SIZE_X x SIZE_X.
+ * @param	field[SIZE_Y][SIZE_X]	The field.
  *
  * @return	The winner code:
  * 							0:		=>		draw,
@@ -144,7 +144,7 @@ int winner(const int field[SIZE_Y][SIZE_X])
  * 			
  * This function checks if the given position on the field is a valid position to put a tile for the given player.
  *
- * @param	field[SIZE_X]	The field.
+ * @param	field[SIZE_Y][SIZE_X]		The field.
  * @param	player		 	The player who is on turn.
  * @param	pos_x		 	The x coordinate of the turn needing to be checked.
  * @param	pos_y		 	The y coordinate of the turn needing to be checked.
@@ -407,6 +407,12 @@ int main(void)
 	//int player_type[2] = { HUMAN, COMPUTER };  //Contains information wether players are HUMAN(=1) or COPMUTER(=2)
 	int player_type[2] = {0, 0};
 	std::cout << "Enter gamemode: C = Computer & H = Human" << std::endl << "ie. \"H,C\" or \"human - C\" for Human vs Computer" << std::endl;
+	
+	/*
+	 * Parse user input
+	 * Just for fun, check many, many possible input patterns
+	 * to determine the Game mode
+	 */
 	while (true)
 	{
 		char str[32];

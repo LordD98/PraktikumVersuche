@@ -44,7 +44,7 @@ void Vektor::transformWithMatrix(const double transformationMatrix[DIM][DIM])
 
 double Vektor::angle(const Vektor &input) const
 {
-	return roundD(acos(this->scalarProd(input)/(this->length()* input.length())) / (2.0*PI));
+	return roundD(acos(this->scalarProd(input)/(this->length()* input.length())) / (2.0*PI) * 360.0);
 }
 
 double Vektor::scalarProd(const Vektor& input) const
@@ -108,23 +108,27 @@ double Vektor::getZ() const
 
 string Vektor::toString() const
 {
-	return "(" + to_string(x) + ", " + to_string(y) + ", " + to_string(z) + ")";
+	std::ostringstream strs;
+	strs << "(" << x << ", " << y << ", " << z << ")";
+	return strs.str();
 }
 
 void Vektor::roundV()
 {
 #ifdef ROUND
-	roundD(x);
-	roundD(y);
-	roundD(z);
+	this->x = roundD(x);
+	this->y = roundD(y);
+	this->z = roundD(z);
 #endif
 }
 
-double Vektor::roundD(double d)
+
+double roundD(double d)
 {
 	for (int i = -10; i <= 10; i++)
 	{
 		if (fabs(d - static_cast<double>(i)) < EPSILON)
 			return static_cast<double>(i);
 	}
+	return d;
 }

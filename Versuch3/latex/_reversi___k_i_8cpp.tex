@@ -6,15 +6,12 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{_reversi___k_i_8cpp_abc856bca74fb081e1a6703227217f64d}\label{_reversi___k_i_8cpp_abc856bca74fb081e1a6703227217f64d}} 
-int {\bfseries possible\+\_\+turns} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player)
-\item 
-\mbox{\Hypertarget{_reversi___k_i_8cpp_a2495c6f2402435b226c6f06785e7d091}\label{_reversi___k_i_8cpp_a2495c6f2402435b226c6f06785e7d091}} 
-void {\bfseries execute\+\_\+turn} (int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
-\item 
-\mbox{\Hypertarget{_reversi___k_i_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}\label{_reversi___k_i_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}} 
-bool {\bfseries turn\+\_\+valid} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
-\item 
+int \hyperlink{_reversi___k_i_8cpp_abc856bca74fb081e1a6703227217f64d}{possible\+\_\+turns} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player)
+\begin{DoxyCompactList}\small\item\em Calculates the number of possible turns for the specified player on the given field. \end{DoxyCompactList}\item 
+void \hyperlink{_reversi___k_i_8cpp_a2495c6f2402435b226c6f06785e7d091}{execute\+\_\+turn} (int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Executes the specified turn. \end{DoxyCompactList}\item 
+bool \hyperlink{_reversi___k_i_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}{turn\+\_\+valid} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
+\begin{DoxyCompactList}\small\item\em This function checks the specified turn is valid. \end{DoxyCompactList}\item 
 bool \hyperlink{_reversi___k_i_8cpp_a2493087dfe8f9e58555eb20a03d941d6}{computer\+\_\+turn} (int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player)
 \end{DoxyCompactItemize}
 
@@ -40,4 +37,73 @@ A function which provides a KI for the game Reversi
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if a turn was executed. False if no turn is possible. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_reversi___k_i_8cpp_a2495c6f2402435b226c6f06785e7d091}\label{_reversi___k_i_8cpp_a2495c6f2402435b226c6f06785e7d091}} 
+\index{Reversi\+\_\+\+K\+I.\+cpp@{Reversi\+\_\+\+K\+I.\+cpp}!execute\+\_\+turn@{execute\+\_\+turn}}
+\index{execute\+\_\+turn@{execute\+\_\+turn}!Reversi\+\_\+\+K\+I.\+cpp@{Reversi\+\_\+\+K\+I.\+cpp}}
+\subsubsection{\texorpdfstring{execute\+\_\+turn()}{execute\_turn()}}
+{\footnotesize\ttfamily void execute\+\_\+turn (\begin{DoxyParamCaption}\item[{int}]{field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]},  }\item[{const int}]{player,  }\item[{const int}]{pos\+\_\+x,  }\item[{const int}]{pos\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Executes the specified turn. 
+
+This function executes a valid turn by the specified player on the given field. It doesn\textquotesingle{}t return anything but it modifies the passed array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field. \\
+\hline
+{\em player} & The player who is on turn. (either 1 or 2) \\
+\hline
+{\em pos\+\_\+x} & The x-\/coordinate of the position chosen by the player. \\
+\hline
+{\em pos\+\_\+y} & The y-\/coordinate of the position chosen by the player. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_reversi___k_i_8cpp_abc856bca74fb081e1a6703227217f64d}\label{_reversi___k_i_8cpp_abc856bca74fb081e1a6703227217f64d}} 
+\index{Reversi\+\_\+\+K\+I.\+cpp@{Reversi\+\_\+\+K\+I.\+cpp}!possible\+\_\+turns@{possible\+\_\+turns}}
+\index{possible\+\_\+turns@{possible\+\_\+turns}!Reversi\+\_\+\+K\+I.\+cpp@{Reversi\+\_\+\+K\+I.\+cpp}}
+\subsubsection{\texorpdfstring{possible\+\_\+turns()}{possible\_turns()}}
+{\footnotesize\ttfamily int possible\+\_\+turns (\begin{DoxyParamCaption}\item[{const int}]{field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]},  }\item[{const int}]{player }\end{DoxyParamCaption})}
+
+
+
+Calculates the number of possible turns for the specified player on the given field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field. \\
+\hline
+{\em player} & The player who is on turn. (either 1 or 2)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The amount of possible, valid turns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_reversi___k_i_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}\label{_reversi___k_i_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}} 
+\index{Reversi\+\_\+\+K\+I.\+cpp@{Reversi\+\_\+\+K\+I.\+cpp}!turn\+\_\+valid@{turn\+\_\+valid}}
+\index{turn\+\_\+valid@{turn\+\_\+valid}!Reversi\+\_\+\+K\+I.\+cpp@{Reversi\+\_\+\+K\+I.\+cpp}}
+\subsubsection{\texorpdfstring{turn\+\_\+valid()}{turn\_valid()}}
+{\footnotesize\ttfamily bool turn\+\_\+valid (\begin{DoxyParamCaption}\item[{const int}]{field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]},  }\item[{const int}]{player,  }\item[{const int}]{pos\+\_\+x,  }\item[{const int}]{pos\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+This function checks the specified turn is valid. 
+
+This function checks if the given position on the field is a valid position to put a tile for the given player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field. \\
+\hline
+{\em player} & The player who is on turn. \\
+\hline
+{\em pos\+\_\+x} & The x coordinate of the turn needing to be checked. \\
+\hline
+{\em pos\+\_\+y} & The y coordinate of the turn needing to be checked.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the player is able to make a valid move, false if he isn\textquotesingle{}t. 
 \end{DoxyReturn}

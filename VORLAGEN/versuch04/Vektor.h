@@ -6,21 +6,27 @@
 // Inhalt: Headerdatei der Klasse Vektor
 //
 
+//Some includes for some useful functions
 #include <cmath>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
 #ifndef Vektor_H
 #define Vektor_H
 
+//defines:
 #define PI 3.141592653589793238
+#define EARTH_RADIUS 6371000.0
+#define DOUBLE_MAX 1e300
 #define DIM 3
 #define EPSILON 1e-10
 #define EPSCMP
 #define ROUND
 
+//declarations
 class Vektor
 {
    public:
@@ -39,7 +45,8 @@ class Vektor
     double scalarProd(const Vektor& input) const;
     double angle(const Vektor& input) const;
     
-    void rotateAroundZ(const double rad);
+	void rotateAroundZ(const double rad);
+	void transformWithMatrix(const double transformationMatrix[DIM][DIM]);
     
     void ausgabe() const;
 	void kurzeAusgabe() const;
@@ -47,8 +54,6 @@ class Vektor
 
 	void roundV();
 
-	void transformWithMatrix(const double transformationMatrix[DIM][DIM]);
-	//double roundD(double d);
 
 private:
     double x;
@@ -57,5 +62,7 @@ private:
 	double rotationMatrix[DIM][DIM] = { {0,0,0},{0,0,0},{0,0,0} };
 
 };
+
+double roundD(double d);
 
 #endif

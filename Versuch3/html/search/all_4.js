@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['reversi',['Reversi',['../index.html',1,'']]],
-  ['reversi_5fki_2ecpp',['Reversi_KI.cpp',['../_reversi___k_i_8cpp.html',1,'']]],
-  ['reversi_5fki_2eh',['Reversi_KI.h',['../_reversi___k_i_8h.html',1,'']]]
+  ['initialize_5ffield',['initialize_field',['../main_8cpp.html#a89dd8754fb2cb1c6d007cd6c4b8de248',1,'main.cpp']]]
 ];

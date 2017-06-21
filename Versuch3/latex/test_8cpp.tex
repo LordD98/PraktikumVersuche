@@ -10,35 +10,86 @@ void \hyperlink{test_8cpp_aacdbfaa6045beffcf99b25f92f979b29}{show\+\_\+field} (c
 \begin{DoxyCompactList}\small\item\em Prints the playing field to the console. \end{DoxyCompactList}\item 
 int \hyperlink{test_8cpp_ad4e85a4813dd17886bcb1704ffa49bca}{winner} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]})
 \begin{DoxyCompactList}\small\item\em Determines the winner of a given end-\/situation. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{test_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}\label{test_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}} 
-bool {\bfseries turn\+\_\+valid} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
-\item 
-\mbox{\Hypertarget{test_8cpp_a2495c6f2402435b226c6f06785e7d091}\label{test_8cpp_a2495c6f2402435b226c6f06785e7d091}} 
-void {\bfseries execute\+\_\+turn} (int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
-\item 
-\mbox{\Hypertarget{test_8cpp_abc856bca74fb081e1a6703227217f64d}\label{test_8cpp_abc856bca74fb081e1a6703227217f64d}} 
-int {\bfseries possible\+\_\+turns} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player)
-\item 
+bool \hyperlink{test_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}{turn\+\_\+valid} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
+\begin{DoxyCompactList}\small\item\em This function checks the specified turn is valid. \end{DoxyCompactList}\item 
+void \hyperlink{test_8cpp_a2495c6f2402435b226c6f06785e7d091}{execute\+\_\+turn} (int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Executes the specified turn. \end{DoxyCompactList}\item 
+int \hyperlink{test_8cpp_abc856bca74fb081e1a6703227217f64d}{possible\+\_\+turns} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player)
+\begin{DoxyCompactList}\small\item\em Calculates the number of possible turns for the specified player on the given field. \end{DoxyCompactList}\item 
 bool \hyperlink{test_8cpp_a180065e4a35cf0e26734f92a6408d607}{test\+\_\+winner} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int winner\+\_\+code)
-\begin{DoxyCompactList}\small\item\em Tests the winner function. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{test_8cpp_a032cb3f8be8d0a8de5e19db5b4baa0ec}\label{test_8cpp_a032cb3f8be8d0a8de5e19db5b4baa0ec}} 
-bool {\bfseries test\+\_\+turn\+\_\+valid} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y, const bool valid)
-\item 
-\mbox{\Hypertarget{test_8cpp_a9a192829b2eb9028348752d5e092fa1a}\label{test_8cpp_a9a192829b2eb9028348752d5e092fa1a}} 
-bool {\bfseries test\+\_\+execute\+\_\+turn} (int input\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int output\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
-\item 
-\mbox{\Hypertarget{test_8cpp_a666f85737c5543e57280b052e94b913a}\label{test_8cpp_a666f85737c5543e57280b052e94b913a}} 
-bool {\bfseries test\+\_\+possible\+\_\+turns} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int count\+\_\+possible\+\_\+turns)
-\item 
-\mbox{\Hypertarget{test_8cpp_a5d97619a3b882df16b6832e8ea9be4e2}\label{test_8cpp_a5d97619a3b882df16b6832e8ea9be4e2}} 
-bool {\bfseries run\+\_\+full\+\_\+test} (void)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Tests the \char`\"{}winner\char`\"{}-\/function. \end{DoxyCompactList}\item 
+bool \hyperlink{test_8cpp_a032cb3f8be8d0a8de5e19db5b4baa0ec}{test\+\_\+turn\+\_\+valid} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y, const bool valid)
+\begin{DoxyCompactList}\small\item\em Tests the \char`\"{}turn\+\_\+valid\char`\"{}-\/function. \end{DoxyCompactList}\item 
+bool \hyperlink{test_8cpp_a9a192829b2eb9028348752d5e092fa1a}{test\+\_\+execute\+\_\+turn} (int input\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int output\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int pos\+\_\+x, const int pos\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Tests the execute\+\_\+turn function. \end{DoxyCompactList}\item 
+bool \hyperlink{test_8cpp_a666f85737c5543e57280b052e94b913a}{test\+\_\+possible\+\_\+turns} (const int field\mbox{[}S\+I\+Z\+E\+\_\+Y\mbox{]}\mbox{[}S\+I\+Z\+E\+\_\+X\mbox{]}, const int player, const int count\+\_\+possible\+\_\+turns)
+\begin{DoxyCompactList}\small\item\em Tests the possible\+\_\+turns function. \end{DoxyCompactList}\item 
+bool \hyperlink{test_8cpp_a5d97619a3b882df16b6832e8ea9be4e2}{run\+\_\+full\+\_\+test} (void)
+\begin{DoxyCompactList}\small\item\em Executes the full test operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Provides a function for testing the program and some other functions in order to provide this. 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{test_8cpp_a2495c6f2402435b226c6f06785e7d091}\label{test_8cpp_a2495c6f2402435b226c6f06785e7d091}} 
+\index{test.\+cpp@{test.\+cpp}!execute\+\_\+turn@{execute\+\_\+turn}}
+\index{execute\+\_\+turn@{execute\+\_\+turn}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{execute\+\_\+turn()}{execute\_turn()}}
+{\footnotesize\ttfamily void execute\+\_\+turn (\begin{DoxyParamCaption}\item[{int}]{field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]},  }\item[{const int}]{player,  }\item[{const int}]{pos\+\_\+x,  }\item[{const int}]{pos\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Executes the specified turn. 
+
+This function executes a valid turn by the specified player on the given field. It doesn\textquotesingle{}t return anything but it modifies the passed array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field. \\
+\hline
+{\em player} & The player who is on turn. (either 1 or 2) \\
+\hline
+{\em pos\+\_\+x} & The x-\/coordinate of the position chosen by the player. \\
+\hline
+{\em pos\+\_\+y} & The y-\/coordinate of the position chosen by the player. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{test_8cpp_abc856bca74fb081e1a6703227217f64d}\label{test_8cpp_abc856bca74fb081e1a6703227217f64d}} 
+\index{test.\+cpp@{test.\+cpp}!possible\+\_\+turns@{possible\+\_\+turns}}
+\index{possible\+\_\+turns@{possible\+\_\+turns}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{possible\+\_\+turns()}{possible\_turns()}}
+{\footnotesize\ttfamily int possible\+\_\+turns (\begin{DoxyParamCaption}\item[{const int}]{field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]},  }\item[{const int}]{player }\end{DoxyParamCaption})}
+
+
+
+Calculates the number of possible turns for the specified player on the given field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field. \\
+\hline
+{\em player} & The player who is on turn. (either 1 or 2)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The amount of possible, valid turns. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8cpp_a5d97619a3b882df16b6832e8ea9be4e2}\label{test_8cpp_a5d97619a3b882df16b6832e8ea9be4e2}} 
+\index{test.\+cpp@{test.\+cpp}!run\+\_\+full\+\_\+test@{run\+\_\+full\+\_\+test}}
+\index{run\+\_\+full\+\_\+test@{run\+\_\+full\+\_\+test}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{run\+\_\+full\+\_\+test()}{run\_full\_test()}}
+{\footnotesize\ttfamily bool run\+\_\+full\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Executes the full test operation. 
+
+This function executes all tests one after each other and checks if they all run correct.
+
+\begin{DoxyReturn}{Returns}
+True if all tests pass, false if at least one of the tests fails. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{test_8cpp_aacdbfaa6045beffcf99b25f92f979b29}\label{test_8cpp_aacdbfaa6045beffcf99b25f92f979b29}} 
 \index{test.\+cpp@{test.\+cpp}!show\+\_\+field@{show\+\_\+field}}
 \index{show\+\_\+field@{show\+\_\+field}!test.\+cpp@{test.\+cpp}}
@@ -54,9 +105,89 @@ The function prints the playing field, grid included, to the console. Crosses sy
 
 
 \begin{DoxyParams}{Parameters}
-{\em field} & The field which is going to be printed \\
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field to be printed \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{test_8cpp_a9a192829b2eb9028348752d5e092fa1a}\label{test_8cpp_a9a192829b2eb9028348752d5e092fa1a}} 
+\index{test.\+cpp@{test.\+cpp}!test\+\_\+execute\+\_\+turn@{test\+\_\+execute\+\_\+turn}}
+\index{test\+\_\+execute\+\_\+turn@{test\+\_\+execute\+\_\+turn}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{test\+\_\+execute\+\_\+turn()}{test\_execute\_turn()}}
+{\footnotesize\ttfamily bool test\+\_\+execute\+\_\+turn (\begin{DoxyParamCaption}\item[{int}]{input\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]},  }\item[{const int}]{output\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]},  }\item[{const int}]{player,  }\item[{const int}]{pos\+\_\+x,  }\item[{const int}]{pos\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Tests the execute\+\_\+turn function. 
+
+Tests the execute\+\_\+turn function by passing its arguments to the execute\+\_\+turn function and compares the modified input field to the expected (already known output field) If they match, true is returned, otherwise false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The input field. \\
+\hline
+{\em output\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The expected output field. \\
+\hline
+{\em player} & The player who is on turn. (either 1 or 2) \\
+\hline
+{\em pos\+\_\+x} & The x-\/coordinate of the position chosen by the player. \\
+\hline
+{\em pos\+\_\+y} & The y-\/coordinate of the position chosen by the player.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the test passes, false if the test fails. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8cpp_a666f85737c5543e57280b052e94b913a}\label{test_8cpp_a666f85737c5543e57280b052e94b913a}} 
+\index{test.\+cpp@{test.\+cpp}!test\+\_\+possible\+\_\+turns@{test\+\_\+possible\+\_\+turns}}
+\index{test\+\_\+possible\+\_\+turns@{test\+\_\+possible\+\_\+turns}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{test\+\_\+possible\+\_\+turns()}{test\_possible\_turns()}}
+{\footnotesize\ttfamily bool test\+\_\+possible\+\_\+turns (\begin{DoxyParamCaption}\item[{const int}]{field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]},  }\item[{const int}]{player,  }\item[{const int}]{count\+\_\+possible\+\_\+turns }\end{DoxyParamCaption})}
+
+
+
+Tests the possible\+\_\+turns function. 
+
+Tests the \char`\"{}possible\+\_\+turns\char`\"{}-\/function by passing its arguments to the \char`\"{}posible\+\_\+turns\char`\"{}-\/function and compares the returned value to the expected (already known output count\+\_\+possible\+\_\+turns) If they match, true is returned, otherwise false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field. \\
+\hline
+{\em player} & The player who is on turn. (either 1 or 2) \\
+\hline
+{\em count\+\_\+possible\+\_\+turns} & The expected count of possible turns.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the test passes, false if the test fails. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8cpp_a032cb3f8be8d0a8de5e19db5b4baa0ec}\label{test_8cpp_a032cb3f8be8d0a8de5e19db5b4baa0ec}} 
+\index{test.\+cpp@{test.\+cpp}!test\+\_\+turn\+\_\+valid@{test\+\_\+turn\+\_\+valid}}
+\index{test\+\_\+turn\+\_\+valid@{test\+\_\+turn\+\_\+valid}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{test\+\_\+turn\+\_\+valid()}{test\_turn\_valid()}}
+{\footnotesize\ttfamily bool test\+\_\+turn\+\_\+valid (\begin{DoxyParamCaption}\item[{const int}]{field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]},  }\item[{const int}]{player,  }\item[{const int}]{pos\+\_\+x,  }\item[{const int}]{pos\+\_\+y,  }\item[{const bool}]{valid }\end{DoxyParamCaption})}
+
+
+
+Tests the \char`\"{}turn\+\_\+valid\char`\"{}-\/function. 
+
+Tests the \char`\"{}turn\+\_\+valid\char`\"{}-\/function by passing its arguments to the \char`\"{}turn\+\_\+valid\char`\"{}-\/function and compares the return code to the expected value If they match, true is returned, otherwise false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field. \\
+\hline
+{\em player} & The player who is on turn. (either 1 or 2) \\
+\hline
+{\em pos\+\_\+x} & The x-\/coordinate of the position to check. \\
+\hline
+{\em pos\+\_\+y} & The y-\/coordinate of the position to check. \\
+\hline
+{\em valid} & The expected return code of the turn\+\_\+valid function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the test passes, false if the test fails. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{test_8cpp_a180065e4a35cf0e26734f92a6408d607}\label{test_8cpp_a180065e4a35cf0e26734f92a6408d607}} 
 \index{test.\+cpp@{test.\+cpp}!test\+\_\+winner@{test\+\_\+winner}}
 \index{test\+\_\+winner@{test\+\_\+winner}!test.\+cpp@{test.\+cpp}}
@@ -65,19 +196,45 @@ The function prints the playing field, grid included, to the console. Crosses sy
 
 
 
-Tests the winner function. 
+Tests the \char`\"{}winner\char`\"{}-\/function. 
 
-Tests the winner function by passing its arguments to the winner function and compares the return code to the expected code If they match, true is returned, 0 otherwise.
+Tests the \char`\"{}winner\char`\"{}-\/function by passing its arguments to the \char`\"{}winner\char`\"{}-\/function and compares the return code to the expected code If they match, true is returned, otherwise false.
 
 
 \begin{DoxyParams}{Parameters}
-{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field. \\
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field. \\
 \hline
 {\em winner\+\_\+code} & The expected winner code.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if the test passes, false if the test fails. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}\label{test_8cpp_afbf34a9e8028eb4911abf42d6dee0dea}} 
+\index{test.\+cpp@{test.\+cpp}!turn\+\_\+valid@{turn\+\_\+valid}}
+\index{turn\+\_\+valid@{turn\+\_\+valid}!test.\+cpp@{test.\+cpp}}
+\subsubsection{\texorpdfstring{turn\+\_\+valid()}{turn\_valid()}}
+{\footnotesize\ttfamily bool turn\+\_\+valid (\begin{DoxyParamCaption}\item[{const int}]{field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]},  }\item[{const int}]{player,  }\item[{const int}]{pos\+\_\+x,  }\item[{const int}]{pos\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+This function checks the specified turn is valid. 
+
+This function checks if the given position on the field is a valid position to put a tile for the given player.
+
+
+\begin{DoxyParams}{Parameters}
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field. \\
+\hline
+{\em player} & The player who is on turn. \\
+\hline
+{\em pos\+\_\+x} & The x coordinate of the turn needing to be checked. \\
+\hline
+{\em pos\+\_\+y} & The y coordinate of the turn needing to be checked.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the player is able to make a valid move, false if he isn\textquotesingle{}t. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{test_8cpp_ad4e85a4813dd17886bcb1704ffa49bca}\label{test_8cpp_ad4e85a4813dd17886bcb1704ffa49bca}} 
 \index{test.\+cpp@{test.\+cpp}!winner@{winner}}
@@ -91,7 +248,7 @@ Determines the winner of a given end-\/situation.
 
 
 \begin{DoxyParams}{Parameters}
-{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field of size S\+I\+Z\+E\+\_\+X x S\+I\+Z\+E\+\_\+X.\\
+{\em field\mbox{[}\+S\+I\+Z\+E\+\_\+\+Y\mbox{]}\mbox{[}\+S\+I\+Z\+E\+\_\+\+X\mbox{]}} & The field.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

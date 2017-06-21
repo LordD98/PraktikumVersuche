@@ -125,6 +125,8 @@
     <Text Include="Reversi_Ergebnis.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".cproject" />
+    <None Include=".project" />
     <None Include="Versuch3.doxyfile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
