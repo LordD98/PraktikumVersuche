@@ -1,0 +1,39 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include \char`\"{}Vektor.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{main_8cpp_af00954c95991c49fa2daee7c29d0aa6e}{sichtweite} (double height, double step)
+\begin{DoxyCompactList}\small\item\em Computes the distance from your eyes to the horizon in meters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_af00954c95991c49fa2daee7c29d0aa6e}\label{main_8cpp_af00954c95991c49fa2daee7c29d0aa6e}} 
+\index{main.\+cpp@{main.\+cpp}!sichtweite@{sichtweite}}
+\index{sichtweite@{sichtweite}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{sichtweite()}{sichtweite()}}
+{\footnotesize\ttfamily double sichtweite (\begin{DoxyParamCaption}\item[{double}]{height,  }\item[{double}]{step }\end{DoxyParamCaption})}
+
+
+
+Computes the distance from your eyes to the horizon in meters. 
+
+This function computes the distance to the farthest point you can see (the horizon) in meters. It rotates a temporary vector representing the earth\textquotesingle{}s radius away from you to the horizon and checks if the line of sight from your eyes to the tip of that vector and the vector are orthogonal. If they are, the funtion prints out and returns the length of that vector and prints out additional information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of your eyes over the ground in meters \\
+\hline
+{\em step} & The difference of the angle between two iterations of the loop in radians\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance to the horizon in meters 
+\end{DoxyReturn}

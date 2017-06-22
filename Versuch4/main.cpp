@@ -7,7 +7,7 @@
 /**
 * @mainpage Versuch4
 *
-* Dokumentation des Spiels Reversi im Rahmen des Praktikums Informatik 1.
+* Dokumentation des Versuches 4 im Rahmen des Praktikums Informatik 1.
 *
 */
 
@@ -79,7 +79,7 @@ int main()
 	~v5;
 #endif
 
-	sichtweite(1.8, PI/2 / 1000000000.0 /*, 1e-6 */ );		//We cannot go smaller (with powers of ten), because 1000000000 exceeds the value range of the int "maxSteps"
+	sichtweite(1.8, PI/2 / 1000000.0 /*, 1e-6 */ );		//We cannot go smaller than 1e9 (with powers of ten), because 1e9 exceeds the value range of the int "maxSteps"
 
 	cin.get();
 	return 0;

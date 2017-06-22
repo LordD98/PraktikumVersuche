@@ -1,0 +1,319 @@
+\hypertarget{class_vektor}{}\section{Vektor Class Reference}
+\label{class_vektor}\index{Vektor@{Vektor}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vektor_a744b4980d331af082c08890ff2e4a857}{Vektor} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Initializes a new \hyperlink{class_vektor}{Vektor}. \end{DoxyCompactList}\item 
+\hyperlink{class_vektor_a66e8e932c4e2df23b5a1d4c4764ce9d2}{$\sim$\+Vektor} ()
+\begin{DoxyCompactList}\small\item\em Standard destructor for the class \char`\"{}\+Vektor\char`\"{}. \end{DoxyCompactList}\item 
+double \hyperlink{class_vektor_ad1864a78b96956dc7f504bba9b39af45}{getX} () const
+\begin{DoxyCompactList}\small\item\em returns the x-\/coordinate of the vector \end{DoxyCompactList}\item 
+double \hyperlink{class_vektor_a93d6584667064c7e3abc9d42b529db93}{getY} () const
+\begin{DoxyCompactList}\small\item\em returns the y-\/coordinate of the vector \end{DoxyCompactList}\item 
+double \hyperlink{class_vektor_aaef4681c5b2ce1348685eb4cd89bd9b2}{getZ} () const
+\begin{DoxyCompactList}\small\item\em returns the z-\/coordinate of the vector \end{DoxyCompactList}\item 
+\hyperlink{class_vektor}{Vektor} \hyperlink{class_vektor_a9e095d5d627ad26c7c2d6f227567e731}{sub} (const \hyperlink{class_vektor}{Vektor} \&input) const
+\begin{DoxyCompactList}\small\item\em Subtracts one vector of another. \end{DoxyCompactList}\item 
+\hyperlink{class_vektor}{Vektor} \hyperlink{class_vektor_aeafef3c21fdf2ad7edca844826e111bf}{add} (const \hyperlink{class_vektor}{Vektor} \&input) const
+\begin{DoxyCompactList}\small\item\em Adds one vector to another. \end{DoxyCompactList}\item 
+double \hyperlink{class_vektor_aa17fc7f816fc425482b17fdafc45a4ed}{length} () const
+\begin{DoxyCompactList}\small\item\em Calculates the length of the vector. \end{DoxyCompactList}\item 
+bool \hyperlink{class_vektor_a4624deedf4290c110ff4cfb756184f39}{ortho} (const \hyperlink{class_vektor}{Vektor} \&input) const
+\begin{DoxyCompactList}\small\item\em Checks if two vectors are orthogonal. \end{DoxyCompactList}\item 
+double \hyperlink{class_vektor_ad517a8ae863c578a6d46c924ff3db1d5}{scalar\+Prod} (const \hyperlink{class_vektor}{Vektor} \&input) const
+\begin{DoxyCompactList}\small\item\em Calculates the dot product between the two vectors. \end{DoxyCompactList}\item 
+double \hyperlink{class_vektor_a33baaca0958a73d60f19500ad59d4288}{angle} (const \hyperlink{class_vektor}{Vektor} \&input) const
+\begin{DoxyCompactList}\small\item\em Calculates the angle (degrees) beween two vectors. \end{DoxyCompactList}\item 
+void \hyperlink{class_vektor_a263858396c9751b803946e86947066e5}{rotate\+AroundZ} (const double rad)
+\begin{DoxyCompactList}\small\item\em Performs a rotation around the z-\/axis. \end{DoxyCompactList}\item 
+void \hyperlink{class_vektor_a5769002268e6bfa05c33b10839420cc2}{transform\+With\+Matrix} (const double transformation\+Matrix\mbox{[}D\+IM\mbox{]}\mbox{[}D\+IM\mbox{]})
+\begin{DoxyCompactList}\small\item\em An auxilliary function which performs a linear transformation on the vector. \end{DoxyCompactList}\item 
+void \hyperlink{class_vektor_aa3c41759f0a472327a8970878234675a}{ausgabe} () const
+\begin{DoxyCompactList}\small\item\em Prints out a vector. \end{DoxyCompactList}\item 
+void \hyperlink{class_vektor_aa564a92eff73be949827eebef9806652}{kurze\+Ausgabe} () const
+\begin{DoxyCompactList}\small\item\em Prints out a vector in a short form. \end{DoxyCompactList}\item 
+string \hyperlink{class_vektor_abcc349a76c74b8464efaedddfec94a04}{to\+String} () const
+\begin{DoxyCompactList}\small\item\em This function converts a vector to a string. \end{DoxyCompactList}\item 
+void \hyperlink{class_vektor_af419bc72996d543d73ceb0c476075f8a}{roundV} ()
+\begin{DoxyCompactList}\small\item\em This function rounds a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_vektor_a744b4980d331af082c08890ff2e4a857}\label{class_vektor_a744b4980d331af082c08890ff2e4a857}} 
+\index{Vektor@{Vektor}!Vektor@{Vektor}}
+\index{Vektor@{Vektor}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{Vektor()}{Vektor()}}
+{\footnotesize\ttfamily Vektor\+::\+Vektor (\begin{DoxyParamCaption}\item[{double}]{inX,  }\item[{double}]{inY,  }\item[{double}]{inZ }\end{DoxyParamCaption})}
+
+
+
+Initializes a new \hyperlink{class_vektor}{Vektor}. 
+
+This function creates a new vector and initializes it with the specified coordinates
+
+
+\begin{DoxyParams}{Parameters}
+{\em inX} & The x-\/coordinate of the new vector \\
+\hline
+{\em inY} & The y-\/coordinate of the new vector \\
+\hline
+{\em inZ} & The z-\/coordinate of the new vector\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new vector, initialized with the given values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_a66e8e932c4e2df23b5a1d4c4764ce9d2}\label{class_vektor_a66e8e932c4e2df23b5a1d4c4764ce9d2}} 
+\index{Vektor@{Vektor}!````~Vektor@{$\sim$\+Vektor}}
+\index{````~Vektor@{$\sim$\+Vektor}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{$\sim$\+Vektor()}{~Vektor()}}
+{\footnotesize\ttfamily Vektor\+::$\sim$\+Vektor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Standard destructor for the class \char`\"{}\+Vektor\char`\"{}. 
+
+Frees the memory of an instance of the class Vektorthis-\/$>$this-\/$>$rotation\+Matrix 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vektor_aeafef3c21fdf2ad7edca844826e111bf}\label{class_vektor_aeafef3c21fdf2ad7edca844826e111bf}} 
+\index{Vektor@{Vektor}!add@{add}}
+\index{add@{add}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \hyperlink{class_vektor}{Vektor} Vektor\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vektor}{Vektor} \&}]{input }\end{DoxyParamCaption}) const}
+
+
+
+Adds one vector to another. 
+
+This function adds the given input vector to the vector (this) by performing an elementwise addition and returning the result in a new vector
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The second summand\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new vector, being the sum of the vector (this) and the input vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_a33baaca0958a73d60f19500ad59d4288}\label{class_vektor_a33baaca0958a73d60f19500ad59d4288}} 
+\index{Vektor@{Vektor}!angle@{angle}}
+\index{angle@{angle}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{angle()}{angle()}}
+{\footnotesize\ttfamily double Vektor\+::angle (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vektor}{Vektor} \&}]{input }\end{DoxyParamCaption}) const}
+
+
+
+Calculates the angle (degrees) beween two vectors. 
+
+This function calculates the angle in degrees between the two vectors \char`\"{}this\char`\"{} and \char`\"{}input\char`\"{} by using the formula a = arccos( $<$v1,v2$>$ / (abs(v1) $\ast$ abs(v2)) ), which is a property of the dot product. Additionally, the angle is rounded (if it is close enough to an integer).
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & the second vector\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The (rounded) angle between the two vectors 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_aa3c41759f0a472327a8970878234675a}\label{class_vektor_aa3c41759f0a472327a8970878234675a}} 
+\index{Vektor@{Vektor}!ausgabe@{ausgabe}}
+\index{ausgabe@{ausgabe}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{ausgabe()}{ausgabe()}}
+{\footnotesize\ttfamily void Vektor\+::ausgabe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints out a vector. 
+
+This funtion prints out a vector in a long format \mbox{\Hypertarget{class_vektor_ad1864a78b96956dc7f504bba9b39af45}\label{class_vektor_ad1864a78b96956dc7f504bba9b39af45}} 
+\index{Vektor@{Vektor}!getX@{getX}}
+\index{getX@{getX}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily double Vektor\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+returns the x-\/coordinate of the vector 
+
+\begin{DoxyReturn}{Returns}
+The x-\/coordinate of the vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_a93d6584667064c7e3abc9d42b529db93}\label{class_vektor_a93d6584667064c7e3abc9d42b529db93}} 
+\index{Vektor@{Vektor}!getY@{getY}}
+\index{getY@{getY}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily double Vektor\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+returns the y-\/coordinate of the vector 
+
+\begin{DoxyReturn}{Returns}
+The y-\/coordinate of the vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_aaef4681c5b2ce1348685eb4cd89bd9b2}\label{class_vektor_aaef4681c5b2ce1348685eb4cd89bd9b2}} 
+\index{Vektor@{Vektor}!getZ@{getZ}}
+\index{getZ@{getZ}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{get\+Z()}{getZ()}}
+{\footnotesize\ttfamily double Vektor\+::getZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+returns the z-\/coordinate of the vector 
+
+\begin{DoxyReturn}{Returns}
+The z-\/coordinate of the vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_aa564a92eff73be949827eebef9806652}\label{class_vektor_aa564a92eff73be949827eebef9806652}} 
+\index{Vektor@{Vektor}!kurze\+Ausgabe@{kurze\+Ausgabe}}
+\index{kurze\+Ausgabe@{kurze\+Ausgabe}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{kurze\+Ausgabe()}{kurzeAusgabe()}}
+{\footnotesize\ttfamily void Vektor\+::kurze\+Ausgabe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints out a vector in a short form. 
+
+This funtion prints out a vector in a short form, the same as cout $<$$<$ \hyperlink{class_vektor_abcc349a76c74b8464efaedddfec94a04}{Vektor\+::to\+String()} $<$$<$ endl;, resulting in a format like ie. (1, 2, 3) \mbox{\Hypertarget{class_vektor_aa17fc7f816fc425482b17fdafc45a4ed}\label{class_vektor_aa17fc7f816fc425482b17fdafc45a4ed}} 
+\index{Vektor@{Vektor}!length@{length}}
+\index{length@{length}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily double Vektor\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calculates the length of the vector. 
+
+Calculates the length of the vector by taking the sqare-\/root of the dot product with itself
+
+\begin{DoxyReturn}{Returns}
+The length of the vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_a4624deedf4290c110ff4cfb756184f39}\label{class_vektor_a4624deedf4290c110ff4cfb756184f39}} 
+\index{Vektor@{Vektor}!ortho@{ortho}}
+\index{ortho@{ortho}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{ortho()}{ortho()}}
+{\footnotesize\ttfamily bool Vektor\+::ortho (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vektor}{Vektor} \&}]{input }\end{DoxyParamCaption}) const}
+
+
+
+Checks if two vectors are orthogonal. 
+
+This function checks if two vectors are orthogonal by comparing the absolute value of the dot product between the two vectors to the macro E\+P\+S\+I\+L\+ON (if the macro E\+P\+S\+C\+MP is defined), because of the possible inaccuracy of the floating-\/point representation of the vector\textquotesingle{}s elements (otherwise it just checks if the dot product is zero).
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The second vector\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vector (this) is orthogonal to the input argument vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_a263858396c9751b803946e86947066e5}\label{class_vektor_a263858396c9751b803946e86947066e5}} 
+\index{Vektor@{Vektor}!rotate\+AroundZ@{rotate\+AroundZ}}
+\index{rotate\+AroundZ@{rotate\+AroundZ}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{rotate\+Around\+Z()}{rotateAroundZ()}}
+{\footnotesize\ttfamily void Vektor\+::rotate\+AroundZ (\begin{DoxyParamCaption}\item[{const double}]{rad }\end{DoxyParamCaption})}
+
+
+
+Performs a rotation around the z-\/axis. 
+
+This fuction sets up the transformation matrix and executes the rotation
+
+
+\begin{DoxyParams}{Parameters}
+{\em rad} & The value of the angle in radians \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vektor_af419bc72996d543d73ceb0c476075f8a}\label{class_vektor_af419bc72996d543d73ceb0c476075f8a}} 
+\index{Vektor@{Vektor}!roundV@{roundV}}
+\index{roundV@{roundV}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{round\+V()}{roundV()}}
+{\footnotesize\ttfamily void Vektor\+::roundV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function rounds a vector. 
+
+This function rounds a vector by rounding all of its elements with the roundD function, but only if the macro \char`\"{}\+R\+O\+U\+N\+D\char`\"{} is defined \mbox{\Hypertarget{class_vektor_ad517a8ae863c578a6d46c924ff3db1d5}\label{class_vektor_ad517a8ae863c578a6d46c924ff3db1d5}} 
+\index{Vektor@{Vektor}!scalar\+Prod@{scalar\+Prod}}
+\index{scalar\+Prod@{scalar\+Prod}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{scalar\+Prod()}{scalarProd()}}
+{\footnotesize\ttfamily double Vektor\+::scalar\+Prod (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vektor}{Vektor} \&}]{input }\end{DoxyParamCaption}) const}
+
+
+
+Calculates the dot product between the two vectors. 
+
+Calculates the dot product between two vectors according to the formula $<$v1, v2$>$ = sqrt(x1$\ast$x2 + y1$\ast$y2 + z1$\ast$z2)
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The second vector\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product between the two vectors 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_a9e095d5d627ad26c7c2d6f227567e731}\label{class_vektor_a9e095d5d627ad26c7c2d6f227567e731}} 
+\index{Vektor@{Vektor}!sub@{sub}}
+\index{sub@{sub}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{sub()}{sub()}}
+{\footnotesize\ttfamily \hyperlink{class_vektor}{Vektor} Vektor\+::sub (\begin{DoxyParamCaption}\item[{const \hyperlink{class_vektor}{Vektor} \&}]{input }\end{DoxyParamCaption}) const}
+
+
+
+Subtracts one vector of another. 
+
+This function subtracts the given input vector from the vector (this) by performing an elementwise subtraction and returning the difference in a new vector
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The subtractor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new vector, being the difference between the vector (this) and the subtractor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_abcc349a76c74b8464efaedddfec94a04}\label{class_vektor_abcc349a76c74b8464efaedddfec94a04}} 
+\index{Vektor@{Vektor}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily string Vektor\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+This function converts a vector to a string. 
+
+This function converts a vector to a string by outputting the data into an ostringstream in the correct format and reading the content of the stream into a string. We\textquotesingle{}re using ostringstream here because just converting the doubles into strings often leads to long tails of zeroes at the end of the numbers, which is not the case here.
+
+\begin{DoxyReturn}{Returns}
+The vector in string form (ie. \char`\"{}(1, 2, 3)\char`\"{}) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vektor_a5769002268e6bfa05c33b10839420cc2}\label{class_vektor_a5769002268e6bfa05c33b10839420cc2}} 
+\index{Vektor@{Vektor}!transform\+With\+Matrix@{transform\+With\+Matrix}}
+\index{transform\+With\+Matrix@{transform\+With\+Matrix}!Vektor@{Vektor}}
+\subsubsection{\texorpdfstring{transform\+With\+Matrix()}{transformWithMatrix()}}
+{\footnotesize\ttfamily void Vektor\+::transform\+With\+Matrix (\begin{DoxyParamCaption}\item[{const double}]{matrix\mbox{[}\+D\+I\+M\mbox{]}\mbox{[}\+D\+I\+M\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+An auxilliary function which performs a linear transformation on the vector. 
+
+This function performs a linear transformation specified by the given matrix on the vector (this) by perfoming a matrix-\/vector product, updating the vector and rounding it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix\mbox{[}\+D\+I\+M\mbox{]}\mbox{[}\+D\+I\+M\mbox{]}} & The transformation matrix which holds the information of the linear transformation \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Vektor.\+h\item 
+\hyperlink{main_8cpp}{main.\+cpp}\item 
+\hyperlink{_vektor_8cpp}{Vektor.\+cpp}\end{DoxyCompactItemize}
