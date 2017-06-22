@@ -23,11 +23,13 @@
 #include <string>
 
 /**
+ * @fn	void initialize_field(int field[SIZE_Y][SIZE_X])
+ * 		
  * @brief Function providing first initialization of a new field
  *
  * This function fills an existing field with zeros and creates the starting pattern.
  *
- * @param field The field which will be initialized
+ * @param field[SIZE_Y][SIZE_X] The field which will be initialized
  */
 void initialize_field(int field[SIZE_Y][SIZE_X])
 {
@@ -45,6 +47,8 @@ void initialize_field(int field[SIZE_Y][SIZE_X])
 }
 
 /**
+* @fn	void show_field(const int field[SIZE_Y][SIZE_X])
+* 		
 * @brief Prints the playing field to the console.
 *
 * This function gets the current playing field as parameter (two dimensional array)
@@ -388,6 +392,16 @@ void game(const int player_typ[2])
 	}
 }
 
+
+/**
+* @fn	int main(void)
+*
+* @brief	The main function and entrypoint for the program
+*
+*			The main function starts the tests, the initialization and the game 
+*
+* @return	1 if everything succeeds, something < 0 if an error occurs
+*/
 int main(void)
 {
 	if (TEST == 1)

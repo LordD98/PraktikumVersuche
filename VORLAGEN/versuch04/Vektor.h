@@ -1,3 +1,10 @@
+/**
+* @file Vektor.cpp
+*
+* Provides function definitions for the class Vektor
+*/
+
+
 //
 // Praktikum Informatik 1 MMXVII
 // Versuch 04: Einführung Klasse
@@ -19,12 +26,13 @@ using namespace std;
 
 //defines:
 #define PI 3.141592653589793238
-#define EARTH_RADIUS 6371000.0
+#define EARTH_RADIUS 6371000.0		//(in m)
 #define DOUBLE_MAX 1e300
 #define DIM 3
 #define EPSILON 1e-10
 #define EPSCMP
 #define ROUND
+//#define VEKTOR_TEST
 
 //declarations
 class Vektor
@@ -59,7 +67,7 @@ private:
     double x;
     double y;
     double z;
-	double rotationMatrix[DIM][DIM] = { {0,0,0},{0,0,0},{0,0,0} };
+	double transformationMatrix[DIM][DIM] = { {0,0,0},{0,0,0},{0,0,0} };
 
 };
 

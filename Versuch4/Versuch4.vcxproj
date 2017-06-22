@@ -117,6 +117,9 @@
   <ItemGroup>
     <ClInclude Include="..\VORLAGEN\versuch04\Vektor.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Versuch4.doxyfile" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
