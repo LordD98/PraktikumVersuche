@@ -22,7 +22,7 @@ void printPerson(Person p);
 int main()
 {
 	char buf[80];
-	string temp;
+	string str;
 	cout << "Geben Sie Vornamen und Namen ein:" << endl;
 	cin.getline(buf, 80);
 	cout << "In welchem Jahr wurden Sie geboren?" << endl;
@@ -30,19 +30,19 @@ int main()
 	cout << "Geben Sie ihr Alter ein:" << endl;
 	cin >> nBenutzer.iAlter;
 
-	temp = buf;
+	str = buf;
 	int splitIndex;
-	if (temp.find(',') < 0)										//User can either give his name in the form "<first name> <last name>" or "<last name>, <first name>"
+	if (str.find(',') > 79)										//User can either give his name in the form "<first name> <last name>" or "<last name>, <first name>"
 	{
-		splitIndex = static_cast<int>(static_cast<string>(buf).find(' ', 0));				//static cast to int not really necessary, but compiler gives a warning
-		nBenutzer.sVorname = temp.substr(0, splitIndex);
-		nBenutzer.sNachname = temp.substr(splitIndex + 1, temp.length() - splitIndex - 1);
+		splitIndex = static_cast<int>(str.find(' ', 0));				//static cast to int not really necessary, but compiler gives a warning
+		nBenutzer.sVorname = str.substr(0, splitIndex);
+		nBenutzer.sNachname = str.substr(splitIndex + 1, str.length() - splitIndex - 1);
 	}
 	else																					
 	{
-		splitIndex = static_cast<int>(static_cast<string>(buf).find(',', 0));				//static cast to int not really necessary, but compiler gives a warning
-		nBenutzer.sNachname = temp.substr(0, splitIndex);
-		nBenutzer.sVorname = temp.substr(splitIndex + 2, temp.length() - splitIndex - 2);
+		splitIndex = static_cast<int>(str.find(',', 0));				//static cast to int not really necessary, but compiler gives a warning
+		nBenutzer.sNachname = str.substr(0, splitIndex);
+		nBenutzer.sVorname = str.substr(splitIndex + 2, str.length() - splitIndex - 2);
 	}
 	printPerson(nBenutzer);
 

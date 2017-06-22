@@ -34,5 +34,6 @@ int main(int argc, char* argv[])
     //dritte komplexe Zahl ausgeben.
     std::cout<<"c3 = "<<c3;
 
+	std::cin.get();
 	return 0;
 }
