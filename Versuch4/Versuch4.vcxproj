@@ -111,14 +111,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\VORLAGEN\versuch04\main.cpp" />
-    <ClCompile Include="..\VORLAGEN\versuch04\Vektor.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\VORLAGEN\versuch04\Vektor.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Versuch4.doxyfile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Vektor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Vektor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
