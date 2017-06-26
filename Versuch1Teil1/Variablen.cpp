@@ -43,6 +43,7 @@ int main()
 	cout << "Die folgenden Berechnungen wurden mit dem Datentyp \"double\" ausgefuehrt." << endl;
 	cout << "Die Summe ist: " << dSumme << " (double)" << endl;
 	cout << "Der ganzzahlige Quotient ist: " << iQuotient << " (double)" << endl << endl;
+	cout << "QuotientCast" << dQuotientCast << endl;
 
 	cout << "Bitte Vornamen eingeben:" << endl;
 	cin >> sVorname;
@@ -59,17 +60,20 @@ int main()
 
 		cout << "Neues Array angelegt." << endl << "Name: \"iFeld\"" << endl << "Anzahl der Elemente: 2" << endl;				//c) .1
 		cout << "Elemente:" << endl;
-		for each (int i in iFeld)
+		for (int i = 0; i<2; i++)
 		{
-			cout << "iFeld[" << i - 1 << "] ist " << i << endl;
+			cout << "iFeld[" << i << "] ist " << iFeld[i] << endl;
 		}
 		cout << endl;
 
 		cout << "Neues Array angelegt." << endl << "Name: \"spielfeld\"" << endl << "Anzahl der Elemente: 2x3 = 6" << endl;		//c) .2
 		cout << "Elemente:" << endl;
-		for each (int i in spielfeld)																							
+		for(int j = 0; j<2;j++)
 		{
-			cout << "spielfeld[" << (i-1)/3 << "][" <<  (i-1) - ((i-1)/3) * 3 << "] ist " << i << endl;
+			for(int i = 0;  i < 3; i++)
+			{
+				cout << "spielfeld[" << j << "][" <<  i << "] ist " << spielfeld[j][i] << endl;
+			}
 		}
 		cout << endl;
 	
@@ -87,9 +91,8 @@ int main()
 	int ch1 = toAlphabet(iName1), ch2 = toAlphabet(iName2);
 	cout << "Position of first char of first name in alphabet is: " << ch1 << endl << "Position of secon char is: " << ch2 << endl << endl;
 
-
-	getchar();
-	getchar();
+	cin.get();
+	cin.get();
 	return 0;
 }
 
