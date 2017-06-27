@@ -5,49 +5,49 @@ Stack::Stack(): head(NULL), tail(NULL)
 
 }
 
-void Stack::push(Student &n)
+void Stack::push(Student &student)
 {
-	ListElem *newElem = new ListElem(n, NULL);
+	ListElem *new_element = new ListElem(student, NULL);
 	if(head == NULL)									// list empty?
 	{
-		tail = newElem;									//set tail to first Element
+		tail = new_element;								//set tail to first Element
 	}
 	else
 	{
-		newElem->gN(head);								//newElem->next points to the elem before it (the old head)
+		new_element->setNext(head);						//newElem->next points to the elem before it (the old head)
 	}
-	head = newElem;										//new head of the stack is now the new element
+	head = new_element;									//new head of the stack is now the new element
 }
 
 void Stack::ausgabe() const
 {	
-	if(head == NULL)													 // list empty?
+	if(head == NULL)									// list empty?
 	{
 		std::cout << "Der Stack ist leer." << std::endl;
 	}
 	else
 	{
-		ListElem* l = head;
-		while (l != NULL)
+		ListElem* cursor = head;
+		while (cursor != NULL)
 		{
-			l->sD().print();
-			l = l->sN();
+			cursor->getData().print();
+			cursor = cursor->getNext();
 		}
 	}
 }
 
-bool Stack::pop(Student &n)
+bool Stack::pop(Student &student)
 {
-    if (head == NULL)						//list empty???
+    if (head == NULL)							//list empty???
 	{ 
         return false;
 	}
     else
 	{
-        n = head->sD();						//read Data from head
-        ListElem* l = head;
-        head = head->sN();					//new head is one before old head (head->sN())
-        delete l;							//delete old head
+        student = head->getData();				//read Data from head
+        ListElem* cursor = head;
+        head = head->getNext();					//new head is one before old head (head->sN())
+        delete cursor;							//delete old head
 	}
     return true;
 }

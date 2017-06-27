@@ -14,8 +14,8 @@ private:
 
 public:
     Stack();
-    void push(Student& n);
-    bool pop(Student& n);
+    void push(Student& student);
+    bool pop(Student& student);
     void ausgabe() const;
 };
 

@@ -17,13 +17,12 @@
 
 #include <iostream>
 #include <string>
-#include "Stack.h"
 #include "Student.h"
 #include "List.h"
 
 int main()
 {
-    Stack testStack;
+    List studentList;
     Student student = Student();
 
     char abfrage;
@@ -33,11 +32,11 @@ int main()
     if (abfrage != 'j')
     {
     	student = Student(12345, "Siggi Baumeister", "23.04.1983", "Ahornst.55");
-    	testStack.push(student);
+    	studentList.enqueue_head(student);
     	student = Student(23456, "Walter Rodenstock", "15.10.1963", "Wüllnerstr.9");
-    	testStack.push(student);
+    	studentList.enqueue_head(student);
     	student = Student(34567, "Harro Simoneit", "19.06.1971", "Am Markt 1");
-    	testStack.push(student);
+    	studentList.enqueue_head(student);
     }
 
     do
@@ -46,22 +45,27 @@ int main()
                   << "-----------------------------" << std::endl
                   << "(1): Datenelement hinzufügen" << std::endl
                   << "(2): Datenelement abhängen" << std::endl
-                  << "(3): Datenbank ausgeben" << std::endl
+				  << "(3): Datenbank ausgeben" << std::endl
+				  << "(4): Datenbank in umgekehrter Reihenfolge ausgeben" << std::endl
+				  << "(5): Datenelement löschen" << std::endl
+				  << "(6): Datenelement hinten ergänzen" << std::endl
                   << "(7): Beenden" << std::endl;
         std::cin >> abfrage;
 
-        switch (abfrage)
+
+		unsigned int matNr = 0;
+		std::string name = "";
+		std::string dateOfBirth = "";
+		std::string address = "";
+		ListElem *cursor = NULL;
+        
+		switch (abfrage)
         {
             case '1':
 				{
-					unsigned int matNr = 0;
-					std::string name = "";
-					std::string dateOfBirth = "";
-					std::string address = "";
-
 					std::cout << "Bitte geben sie die Daten für den Studenten ein.\nName: ";
 					std::cin.ignore(10, '\n');    // ignore character '\n', which still is in the buffer
-					getline(std::cin, name);    // get entire line, including whitespace
+					getline(std::cin, name);      // get entire line, including whitespace
 					std::cout << "Geburtsdatum: ";
 					getline(std::cin, dateOfBirth);
 					std::cout << "Adresse: ";
@@ -71,14 +75,14 @@ int main()
 
 					student = Student(matNr, name, dateOfBirth, address);
 
-					testStack.push(student);
+					studentList.enqueue_head(student);
 				}
 				break;
             case '2':
             	{
 					Student delElem = Student();
 					bool success = false;
-					success = testStack.pop(delElem);
+					success = studentList.dequeue(delElem);
 
 					if(success)
 					{
@@ -93,9 +97,49 @@ int main()
                 break;
 
             case '3':
-                std::cout << "Inhalt des Stacks:\n";
-                testStack.ausgabe();
+                std::cout << "Inhalt der Liste:\n";
+                studentList.print_forwards();
                 break;
+
+			case '4':
+				std::cout << "Inhalt der Liste rueckwaerts:\n";
+				studentList.print_backwards();
+				break;
+
+			case '5':
+				std::cout << "Matrikelnummer des zu loeschenden Studenten eingeben:" << std::endl;
+				std::cin >> matNr;
+				cursor = studentList.getFirst();
+				do 
+				{
+					if (cursor->getData().getMatNr() == matNr)
+					{
+						break;
+					}
+					cursor = cursor->getNext();
+				} while (cursor != NULL);
+
+				studentList.remove(cursor);
+
+				std::cout << "Loeschen erfolgreich!\n";
+				break;
+
+			case '6':
+
+				std::cout << "Bitte geben sie die Daten für den Studenten ein.\nName: ";
+				std::cin.ignore(10, '\n');    // ignore character '\n', which still is in the buffer
+				getline(std::cin, name);      // get entire line, including whitespace
+				std::cout << "Geburtsdatum: ";
+				getline(std::cin, dateOfBirth);
+				std::cout << "Adresse: ";
+				getline(std::cin, address);
+				std::cout << "Matrikelnummer: " << std::flush;
+				std::cin >> matNr;
+
+				student = Student(matNr, name, dateOfBirth, address);
+
+				studentList.enqueue_tail(student);
+				break;
 
             case '7':
                 std::cout << "Das Programm wird nun beendet";

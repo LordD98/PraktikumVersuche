@@ -13,16 +13,19 @@ class ListElem
 {
 private:
 	Student data;
+	ListElem* prev;
     ListElem* next;
 
 public:
-    ListElem(const Student &new_elem, ListElem* const next);
+    ListElem(const Student &new_elem, ListElem* const prev, ListElem* const next);
 
     void setData(const Student &d);			//setData
-    void setNext(ListElem* const n);		//setNext
+	void setNext(ListElem* const n);		//setNext
+	void setPrev(ListElem* const n);		//setPrev
 
     Student getData() const;				//getData
-    ListElem* getNext() const;				//getNext
+	ListElem* getNext() const;				//getNext
+	ListElem* getPrev() const;				//getPrev
 };
 
 #endif
