@@ -111,6 +111,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="add.cpp" />
+    <ClCompile Include="const.cpp" />
+    <ClCompile Include="div.cpp" />
+    <ClCompile Include="expression.cpp" />
+    <ClCompile Include="mul.cpp" />
+    <ClCompile Include="result.cpp" />
+    <ClCompile Include="sub.cpp" />
+    <ClCompile Include="taschenrechner.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="add.h" />
+    <ClInclude Include="const.h" />
+    <ClInclude Include="div.h" />
+    <ClInclude Include="expression.h" />
+    <ClInclude Include="mul.h" />
+    <ClInclude Include="result.h" />
+    <ClInclude Include="sub.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".cproject" />
+    <None Include=".project" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
