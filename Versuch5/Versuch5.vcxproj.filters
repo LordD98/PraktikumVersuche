@@ -45,4 +45,12 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".cproject">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include=".project">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+  </ItemGroup>
 </Project>

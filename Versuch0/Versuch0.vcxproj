@@ -121,6 +121,10 @@
   <ItemGroup>
     <ClInclude Include="Complex.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".cproject" />
+    <None Include=".project" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

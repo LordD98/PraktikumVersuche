@@ -28,7 +28,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include=".cproject" />
-    <None Include=".project" />
+    <None Include=".cproject">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include=".project">
+      <Filter>Ressourcendateien</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -127,6 +127,10 @@
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Student.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".cproject" />
+    <None Include=".project" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

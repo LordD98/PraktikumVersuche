@@ -115,6 +115,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include=".cproject" />
+    <None Include=".project" />
     <None Include="Versuch4.doxyfile" />
   </ItemGroup>
   <ItemGroup>
