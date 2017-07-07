@@ -1,10 +1,28 @@
+/**
+ * @file	Stack.cpp.
+ *
+ * @brief	Implements the stack class.
+ */
+
 #include "Stack.h"
 
+/**
+ * @fn	Stack::Stack()
+ *
+ * @brief	Default constructor.
+ */
 Stack::Stack(): head(NULL), tail(NULL)
 {
 
 }
 
+/**
+ * @fn	void Stack::push(Student &student)
+ *
+ * @brief	Pushes an object onto this stack.
+ *
+ * @param	student		The student to push.
+ */
 void Stack::push(Student &student)
 {
 	ListElem *new_element = new ListElem(student, NULL);
@@ -19,6 +37,11 @@ void Stack::push(Student &student)
 	head = new_element;									//new head of the stack is now the new element
 }
 
+/**
+ * @fn	void Stack::ausgabe() const
+ *
+ * @brief	Prints this instance.
+ */
 void Stack::ausgabe() const
 {	
 	if(head == NULL)									// list empty?
@@ -36,6 +59,15 @@ void Stack::ausgabe() const
 	}
 }
 
+/**
+ * @fn	bool Stack::pop(Student &student)
+ *
+ * @brief	Removes and returns the top-of-stack object.
+ *
+ * @param	student	The student to pop.
+ *
+ * @return	True if it succeeds, false if it fails.
+ */
 bool Stack::pop(Student &student)
 {
     if (head == NULL)							//list empty???

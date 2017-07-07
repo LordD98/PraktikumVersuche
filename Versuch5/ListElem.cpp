@@ -6,30 +6,63 @@
 
 #include "ListElem.h"
 
+/**
+ * @fn	ListElem::ListElem(const Student &new_elem, ListElem* const next)
+ *
+ * @brief	Constructor for ListElem.
+ *
+ * @param 		  	new_elem	The new element.
+ * @param			next		The next element.
+ */
 ListElem::ListElem(const Student &new_elem, ListElem* const next): data(new_elem), next(next)
 {
 
 }
 
-void ListElem::setData(const Student &s)
+/**
+ * @fn	void ListElem::setData(const Student &student)
+ *
+ * @brief	Sets the data of a ListElem.
+ *
+ * @param	student		The Student.
+ */
+void ListElem::setData(const Student &student)
 {
-    data = s;
+    this->data = student;
 }
 
-
-void ListElem::setNext(ListElem* const n)
+/**
+ * @fn	void ListElem::setNext(ListElem* const next)
+ *
+ * @brief	Sets the next Element.
+ *
+ * @param	next	
+ */
+void ListElem::setNext(ListElem* const next)
 {
-    next = n;
+    this->next = next;
 }
 
-
+/**
+ * @fn	Student ListElem::getData() const
+ *
+ * @brief	Gets the saved Student.
+ *
+ * @return	The saved Student.
+ */
 Student ListElem::getData() const
 {
-    return data;
+	return this->data;
 }
 
-
+/**
+ * @fn	ListElem* ListElem::getNext() const
+ *
+ * @brief	Gets the next item.
+ *
+ * @return	Null if it fails, else the next.
+ */
 ListElem* ListElem::getNext() const
 {
-    return next;
+    return this->next;
 }

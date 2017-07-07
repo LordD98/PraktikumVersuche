@@ -21,7 +21,13 @@
 #include "Student.h"
 #include "List.h"
 
-
+/**
+ * @fn	int main()
+ *
+ * @brief	Main entry-point for this application.
+ *
+ * @return	Exit-code for the process - 0 for success, else an error code.
+ */
 int main()
 {
     Stack testStack;
