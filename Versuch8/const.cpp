@@ -9,7 +9,13 @@
 #include "const.h"
 #include <iostream>
 
-
+/**
+ * @fn	Const::Const(double val)
+ *
+ * @brief	Constructor.
+ *
+ * @param	val	The value.
+ */
 Const::Const(double val) : value(val)
 {
 #ifdef PRINT_INIT
@@ -17,6 +23,11 @@ Const::Const(double val) : value(val)
 #endif
 }
 
+/**
+ * @fn	Const::~Const()
+ *
+ * @brief	Destructor for the Const expression.
+ */
 Const::~Const()
 {
 #ifdef PRINT_DESTR
@@ -24,11 +35,23 @@ Const::~Const()
 #endif
 }
 
+/**
+ * @fn	double Const::evaluate() const
+ *
+ * @brief	Gets the value of the const.
+ *
+ * @return	The value.
+ */
 double Const::evaluate() const
 {
 	return this->value;
 }
 
+/**
+ * @fn	void Const::print() const
+ *
+ * @brief	Prints this instance.
+ */
 void Const::print() const
 {
 	std::cout << this->value;
