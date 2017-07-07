@@ -14,7 +14,7 @@
 * @param 		  	new_elem	The new element.
 * @param			next		The next element.
 */
-ListElem::ListElem(const Student &new_elem, ListElem* const next) : data(new_elem), next(next)
+ListElem::ListElem(const Student &new_elem, ListElem* const prev, ListElem* const next) : data(new_elem), prev(prev), next(next)
 {
 
 }
@@ -41,6 +41,19 @@ void ListElem::setData(const Student &student)
 void ListElem::setNext(ListElem* const next)
 {
 	this->next = next;
+}
+
+
+/**
+* @fn	void ListElem::setPrev(ListElem* const prev)
+*
+* @brief	Sets the previous Element.
+*
+* @param	prev	The new previos Element
+*/
+void ListElem::setPrev(ListElem* const prev)
+{
+	this->prev = prev;
 }
 
 /**
