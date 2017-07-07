@@ -21,6 +21,9 @@
     <None Include=".project">
       <Filter>Ressourcendateien</Filter>
     </None>
+    <None Include="Versuch7.doxyfile">
+      <Filter>Ressourcendateien</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

@@ -137,6 +137,7 @@
     <None Include=".cproject" />
     <None Include=".project" />
     <None Include="ClassDiagram.cd" />
+    <None Include="Versuch8.doxyfile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

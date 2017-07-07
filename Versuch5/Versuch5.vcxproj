@@ -130,6 +130,7 @@
   <ItemGroup>
     <None Include=".cproject" />
     <None Include=".project" />
+    <None Include="Vesuch5.doxyfile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
