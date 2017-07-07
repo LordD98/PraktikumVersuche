@@ -105,15 +105,15 @@ void finalTest()
 int main()
 {
 	// Implementieren Sie zuerst die Klassen Const und Result und testen Sie das Ergebnis.
-	//testConst();																						//passed
-	//testResult();																						//passed
+	testConst();																						//passed
+	testResult();																						//passed
 	
 	// Ergänzen Sie ihr Programm nach und nach um weitere Rechenoperationen
-	testAddConst();
-	testMulAddConst();
-	testSubMulAddConst();
-	std::cout << "Der finale Test: kommt noch..." << std::endl;
-	finalTest();
+	testAddConst();																						//passed
+	testMulAddConst();																					//passed
+	testSubMulAddConst();																				//passed
+	std::cout << "Der finale Test: kommt noch..." << std::endl;											//passed
+	finalTest();																						//passed
 	
 	std::cin.get();
 	return 0;

@@ -1,0 +1,132 @@
+\hypertarget{class_list_elem}{}\section{List\+Elem Class Reference}
+\label{class_list_elem}\index{List\+Elem@{List\+Elem}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_list_elem_af7611fadd253200b0eb35a74c2f2f412}{List\+Elem} (const \hyperlink{class_student}{Student} \&new\+\_\+elem, \hyperlink{class_list_elem}{List\+Elem} $\ast$const prev, \hyperlink{class_list_elem}{List\+Elem} $\ast$const next)
+\begin{DoxyCompactList}\small\item\em Constructor for \hyperlink{class_list_elem}{List\+Elem}. \end{DoxyCompactList}\item 
+void \hyperlink{class_list_elem_af28aa52ed74728f9ee6f0cc52794b3e8}{set\+Data} (const \hyperlink{class_student}{Student} \&d)
+\begin{DoxyCompactList}\small\item\em Sets the data of a \hyperlink{class_list_elem}{List\+Elem}. \end{DoxyCompactList}\item 
+void \hyperlink{class_list_elem_aca66e560d24ac2954f738f52de2e15b3}{set\+Next} (\hyperlink{class_list_elem}{List\+Elem} $\ast$const n)
+\begin{DoxyCompactList}\small\item\em Sets the next Element. \end{DoxyCompactList}\item 
+void \hyperlink{class_list_elem_aae056f9271098897ce8bf243354cd744}{set\+Prev} (\hyperlink{class_list_elem}{List\+Elem} $\ast$const n)
+\begin{DoxyCompactList}\small\item\em Sets the previous Element. \end{DoxyCompactList}\item 
+\hyperlink{class_student}{Student} \hyperlink{class_list_elem_af80ce8c80d9e4dfa450d9272c965e110}{get\+Data} () const
+\begin{DoxyCompactList}\small\item\em Gets the saved \hyperlink{class_student}{Student}. \end{DoxyCompactList}\item 
+\hyperlink{class_list_elem}{List\+Elem} $\ast$ \hyperlink{class_list_elem_ac615618c96d2bacc597ba59a4e8e2620}{get\+Next} () const
+\begin{DoxyCompactList}\small\item\em Gets the next item. \end{DoxyCompactList}\item 
+\hyperlink{class_list_elem}{List\+Elem} $\ast$ \hyperlink{class_list_elem_a5e0941e76c8f85252a84d3ba3b874bc3}{get\+Prev} () const
+\begin{DoxyCompactList}\small\item\em Gets the previous item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_list_elem_af7611fadd253200b0eb35a74c2f2f412}\label{class_list_elem_af7611fadd253200b0eb35a74c2f2f412}} 
+\index{List\+Elem@{List\+Elem}!List\+Elem@{List\+Elem}}
+\index{List\+Elem@{List\+Elem}!List\+Elem@{List\+Elem}}
+\subsubsection{\texorpdfstring{List\+Elem()}{ListElem()}}
+{\footnotesize\ttfamily List\+Elem\+::\+List\+Elem (\begin{DoxyParamCaption}\item[{const \hyperlink{class_student}{Student} \&}]{new\+\_\+elem,  }\item[{\hyperlink{class_list_elem}{List\+Elem} $\ast$const}]{prev,  }\item[{\hyperlink{class_list_elem}{List\+Elem} $\ast$const}]{next }\end{DoxyParamCaption})}
+
+
+
+Constructor for \hyperlink{class_list_elem}{List\+Elem}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+elem} & The new element. \\
+\hline
+{\em next} & The next element. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_list_elem_af80ce8c80d9e4dfa450d9272c965e110}\label{class_list_elem_af80ce8c80d9e4dfa450d9272c965e110}} 
+\index{List\+Elem@{List\+Elem}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!List\+Elem@{List\+Elem}}
+\subsubsection{\texorpdfstring{get\+Data()}{getData()}}
+{\footnotesize\ttfamily \hyperlink{class_student}{Student} List\+Elem\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the saved \hyperlink{class_student}{Student}. 
+
+\begin{DoxyReturn}{Returns}
+The saved \hyperlink{class_student}{Student}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_list_elem_ac615618c96d2bacc597ba59a4e8e2620}\label{class_list_elem_ac615618c96d2bacc597ba59a4e8e2620}} 
+\index{List\+Elem@{List\+Elem}!get\+Next@{get\+Next}}
+\index{get\+Next@{get\+Next}!List\+Elem@{List\+Elem}}
+\subsubsection{\texorpdfstring{get\+Next()}{getNext()}}
+{\footnotesize\ttfamily \hyperlink{class_list_elem}{List\+Elem} $\ast$ List\+Elem\+::get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the next item. 
+
+\begin{DoxyReturn}{Returns}
+Null if it fails, else the next. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_list_elem_a5e0941e76c8f85252a84d3ba3b874bc3}\label{class_list_elem_a5e0941e76c8f85252a84d3ba3b874bc3}} 
+\index{List\+Elem@{List\+Elem}!get\+Prev@{get\+Prev}}
+\index{get\+Prev@{get\+Prev}!List\+Elem@{List\+Elem}}
+\subsubsection{\texorpdfstring{get\+Prev()}{getPrev()}}
+{\footnotesize\ttfamily \hyperlink{class_list_elem}{List\+Elem} $\ast$ List\+Elem\+::get\+Prev (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the previous item. 
+
+\begin{DoxyReturn}{Returns}
+Null if it fails, else the previous. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_list_elem_af28aa52ed74728f9ee6f0cc52794b3e8}\label{class_list_elem_af28aa52ed74728f9ee6f0cc52794b3e8}} 
+\index{List\+Elem@{List\+Elem}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!List\+Elem@{List\+Elem}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily void List\+Elem\+::set\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{class_student}{Student} \&}]{student }\end{DoxyParamCaption})}
+
+
+
+Sets the data of a \hyperlink{class_list_elem}{List\+Elem}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student} & The \hyperlink{class_student}{Student}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_list_elem_aca66e560d24ac2954f738f52de2e15b3}\label{class_list_elem_aca66e560d24ac2954f738f52de2e15b3}} 
+\index{List\+Elem@{List\+Elem}!set\+Next@{set\+Next}}
+\index{set\+Next@{set\+Next}!List\+Elem@{List\+Elem}}
+\subsubsection{\texorpdfstring{set\+Next()}{setNext()}}
+{\footnotesize\ttfamily void List\+Elem\+::set\+Next (\begin{DoxyParamCaption}\item[{\hyperlink{class_list_elem}{List\+Elem} $\ast$const}]{next }\end{DoxyParamCaption})}
+
+
+
+Sets the next Element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em next} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_list_elem_aae056f9271098897ce8bf243354cd744}\label{class_list_elem_aae056f9271098897ce8bf243354cd744}} 
+\index{List\+Elem@{List\+Elem}!set\+Prev@{set\+Prev}}
+\index{set\+Prev@{set\+Prev}!List\+Elem@{List\+Elem}}
+\subsubsection{\texorpdfstring{set\+Prev()}{setPrev()}}
+{\footnotesize\ttfamily void List\+Elem\+::set\+Prev (\begin{DoxyParamCaption}\item[{\hyperlink{class_list_elem}{List\+Elem} $\ast$const}]{prev }\end{DoxyParamCaption})}
+
+
+
+Sets the previous Element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prev} & The new previos Element \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_list_elem_8h}{List\+Elem.\+h}\item 
+\hyperlink{_list_elem_8cpp}{List\+Elem.\+cpp}\end{DoxyCompactItemize}
