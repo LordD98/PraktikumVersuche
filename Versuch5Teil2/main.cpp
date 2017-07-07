@@ -56,7 +56,7 @@ int main()
 				  << "(4): Datenbank in umgekehrter Reihenfolge ausgeben" << std::endl
 				  << "(5): Datenelement löschen" << std::endl
 				  << "(6): Datenelement hinten ergänzen" << std::endl
-                  << "(7): Beenden" << std::endl;
+                  << "(7): Beenden" << std::endl << std::endl;
         std::cin >> abfrage;
 
 

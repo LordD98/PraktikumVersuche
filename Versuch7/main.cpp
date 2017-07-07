@@ -67,7 +67,7 @@ int main()
 				  << "(5): Datenelement löschen" << std::endl
 				  << "(6): Datenelement hinten ergänzen" << std::endl
 				  << "(7): Liste sortieren" << std::endl
-                  << "(8): Beenden" << std::endl;
+                  << "(8): Beenden" << std::endl << std::endl;
         std::cin >> abfrage;
 
 

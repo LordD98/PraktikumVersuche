@@ -54,7 +54,7 @@ int main()
                   << "(1): Datenelement hinzufügen" << std::endl
                   << "(2): Datenelement abhängen" << std::endl
                   << "(3): Datenbank ausgeben" << std::endl
-                  << "(7): Beenden" << std::endl;
+                  << "(7): Beenden" << std::endl << std::endl;
         std::cin >> abfrage;
 
         switch (abfrage)

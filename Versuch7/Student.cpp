@@ -85,7 +85,11 @@ bool Student::operator ==(const Student& right)
  */
 bool Student::equals(Student s2)	//deprecated. Use operator == instead
 {
-#warning "This function is deprecated. Use the operator '==' instead!"
+#ifdef _MSC_VER
+#pragma message ("This function is deprecated. Use the operator '==' instead!")
+#else
+#pragma warning  "This function is deprecated. Use the operator '==' instead!"
+#endif
 	//Students are considered to be equal if all attributes are equal.
 	return this->address == s2.getAddress() && this->dateOfBirth == s2.getDateOfBirth() && this->matNr == s2.getMatNr() && this->name == s2.name;
 }
