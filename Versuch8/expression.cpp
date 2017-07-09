@@ -9,6 +9,11 @@
 #include "expression.h"
 #include <iostream>
 
+/**
+ * @fn	Expression::Expression()
+ *
+ * @brief	Default constructor.
+ */
 Expression::Expression()
 {
 #ifdef PRINT_INIT
@@ -16,6 +21,11 @@ Expression::Expression()
 #endif
 }
 
+/**
+ * @fn	Expression::~Expression()
+ *
+ * @brief	Destructor.
+ */
 Expression::~Expression()
 {
 #ifdef PRINT_DESTR

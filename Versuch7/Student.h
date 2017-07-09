@@ -1,3 +1,8 @@
+/**
+ * @file	Student.h.
+ *
+ * @brief	Declares the student class.
+ */
 #ifndef STUDENT_H_
 #define STUDENT_H_
 

@@ -18,8 +18,8 @@ private:
 public:
     ListElem(const Student &new_elem, ListElem* const next);
 
-    void setData(const Student &d);			//setData
-    void setNext(ListElem* const n);		//setNext
+    void setData(const Student &student);	//setData
+    void setNext(ListElem* const next);		//setNext
 
     Student getData() const;				//getData
     ListElem* getNext() const;				//getNext

@@ -1,7 +1,7 @@
 /** @mainpage
  *
  * Praktikum Informatik 1@n
- * Versuch 5: Dynamische Datenstrukturen
+ * Versuch 5 Teil 2: Dynamische Datenstrukturen
  *
  * *Die erklaerenden Texte wurden zum Teil von* wikipedia.org *uebernommen*@n
  * *Siehe hierzu die entsprechende* [Webseite][wikipedia].
@@ -20,6 +20,13 @@
 #include "Student.h"
 #include "List.h"
 
+/**
+ * @fn	int main()
+ *
+ * @brief	Main entry-point for this application.
+ *
+ * @return	Exit-code for the process - 0 for success, else an error code.
+ */
 int main()
 {
     List studentList;
@@ -49,7 +56,7 @@ int main()
 				  << "(4): Datenbank in umgekehrter Reihenfolge ausgeben" << std::endl
 				  << "(5): Datenelement löschen" << std::endl
 				  << "(6): Datenelement hinten ergänzen" << std::endl
-                  << "(7): Beenden" << std::endl;
+                  << "(7): Beenden" << std::endl << std::endl;
         std::cin >> abfrage;
 
 

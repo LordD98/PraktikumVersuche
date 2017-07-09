@@ -9,6 +9,14 @@
 #include "div.h"
 #include <iostream>
 
+/**
+ * @fn	Div::Div(Expression *l, Expression *r)
+ *
+ * @brief	Constructor.
+ *
+ * @param	l	An Expression to process.
+ * @param	r	An Expression to process.
+ */
 Div::Div(Expression *l, Expression *r) : left(l), right(r)
 {
 #ifdef PRINT_INIT
@@ -16,7 +24,11 @@ Div::Div(Expression *l, Expression *r) : left(l), right(r)
 #endif
 }
 
-
+/**
+ * @fn	Div::~Div()
+ *
+ * @brief	Destructor.
+ */
 Div::~Div()
 {
 #ifdef PRINT_DESTR
@@ -24,11 +36,23 @@ Div::~Div()
 #endif
 }
 
+/**
+ * @fn	double Div::evaluate() const
+ *
+ * @brief	Gets the result of the division
+ *
+ * @return	A double.
+ */
 double Div::evaluate() const
 {
 	return this->left->evaluate() / this->right->evaluate();
 }
 
+/**
+ * @fn	void Div::print() const
+ *
+ * @brief	Prints this instance.
+ */
 void Div::print() const
 {
 	std::cout << "(";

@@ -30,6 +30,13 @@ std::ostream& operator <<(std::ostream& ostr, Student &stud)
 	return stud.print(ostr);
 }
 
+/**
+ * @fn	int main()
+ *
+ * @brief	Main entry-point for this application.
+ *
+ * @return	Exit-code for the process - 0 for success, else an error code.
+ */
 int main()
 {	
     vector<Student> studentList;
@@ -60,7 +67,7 @@ int main()
 				  << "(5): Datenelement löschen" << std::endl
 				  << "(6): Datenelement hinten ergänzen" << std::endl
 				  << "(7): Liste sortieren" << std::endl
-                  << "(8): Beenden" << std::endl;
+                  << "(8): Beenden" << std::endl << std::endl;
         std::cin >> abfrage;
 
 

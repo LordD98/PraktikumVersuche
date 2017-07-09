@@ -34,5 +34,8 @@
     <None Include=".project">
       <Filter>Ressourcendateien</Filter>
     </None>
+    <None Include="Versuch6.doxyfile">
+      <Filter>Ressourcendateien</Filter>
+    </None>
   </ItemGroup>
 </Project>
