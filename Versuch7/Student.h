@@ -14,9 +14,9 @@ public:
 	std::string getAddress();
 	bool equals(Student s2);
 	std::ostream& print(std::ostream& out);
-	bool Student::operator <(const Student& right) const;
-	bool Student::operator >(const Student& right);
-	bool Student::operator ==(const Student& right);
+	bool operator <(const Student& right) const;
+	bool operator >(const Student& right);
+	bool operator ==(const Student& right);
 private:
     unsigned int matNr;
     std::string name;
