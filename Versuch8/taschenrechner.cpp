@@ -15,6 +15,12 @@
 #include "sub.h"
 #include "div.h"
 
+	void testConst();
+	void testResult();
+	void testAddConst();
+	void testMulAddConst();
+	void testSubMulAddConst();
+	void finalTest();
 
  /**
  * @fn	int main()
@@ -26,10 +32,11 @@
 int main()
 {
 	// Implementieren Sie zuerst die Klassen Const und Result und testen Sie das Ergebnis.
-	testConst();																						//passed
-	testResult();																						//passed
 
-																										// Ergänzen Sie ihr Programm nach und nach um weitere Rechenoperationen
+	//testConst();																						//passed
+	//testResult();																						//passed
+
+																										// Ergï¿½nzen Sie ihr Programm nach und nach um weitere Rechenoperationen
 	testAddConst();																						//passed
 	testMulAddConst();																					//passed
 	testSubMulAddConst();																				//passed
