@@ -1,0 +1,39 @@
+\hypertarget{class_dijkstra}{}\section{Dijkstra Class Reference}
+\label{class_dijkstra}\index{Dijkstra@{Dijkstra}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ \hyperlink{class_street}{Street} $\ast$ $>$ \hyperlink{class_dijkstra_aa9c3cc0e47ab3a865dbe9f4e152af71f}{search} (const \hyperlink{class_abstract_map}{Abstract\+Map} \&map, Q\+String start, Q\+String target)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_dijkstra}{Dijkstra} Algorithm to find the shortest path between two towns. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_dijkstra_aa6c60bc89d86bf877cc586557ae8f564}\label{class_dijkstra_aa6c60bc89d86bf877cc586557ae8f564}} 
+static void {\bfseries draw\+Way} (std\+::vector$<$ \hyperlink{class_street}{Street} $\ast$$>$ \&way, Q\+Graphics\+Scene \&scene)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dijkstra_aa9c3cc0e47ab3a865dbe9f4e152af71f}\label{class_dijkstra_aa9c3cc0e47ab3a865dbe9f4e152af71f}} 
+\index{Dijkstra@{Dijkstra}!search@{search}}
+\index{search@{search}!Dijkstra@{Dijkstra}}
+\subsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_street}{Street} $\ast$ $>$ Dijkstra\+::search (\begin{DoxyParamCaption}\item[{const \hyperlink{class_abstract_map}{Abstract\+Map} \&}]{map,  }\item[{Q\+String}]{start,  }\item[{Q\+String}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\hyperlink{class_dijkstra}{Dijkstra} Algorithm to find the shortest path between two towns. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Name of the start town. \\
+\hline
+{\em target} & Name of the target town.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to a list of streets between the towns. Empty list if no connection found. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dijkstra.\+h\item 
+dijkstra.\+cpp\end{DoxyCompactItemize}
